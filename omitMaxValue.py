@@ -7,4 +7,4 @@ def omitMaxValue(currentPos, stepsToTake, maxPos, minPos):
     if currentPos + stepsToTake < minPos:
         stepsToTake = minPos-currentPos
 
-        return stepsToTake
+    return stepsToTake
