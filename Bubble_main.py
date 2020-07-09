@@ -64,7 +64,7 @@ while True:
         pi.set_servo_pulsewidth(pitchServo, pitchPositie)
         pi.set_servo_pulsewidth(rollServo, rollPositie)
 
-        sleep(0.05)
+        sleep(0.04)
 
     # Turn off the servos
     pi.set_servo_pulsewidth(yawServo, 0)
