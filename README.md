@@ -1,7 +1,7 @@
 # Bubble
  Software written for Bubble, inspired by 'Mira' from Alfonso Martinez
 
-The code is written for Raspberry and will slowly be expanded.
+The code is written for Raspberry and will be slowly expanded.
 
 Three servos are to be attached on the Raspberry, at pins:
 
