@@ -42,6 +42,8 @@ while True:
     pitchStappen = random.randint(-800,800)
     rollStappen = random.randint(-800,800)
 
+    print(yawStappen, ', ', pitchStappen, ', ', rollStappen, '/n')
+
     # Make sure the maximum potmeter valus are not exceeded
     yawStappen = omitMaxValue(yawPositie,yawStappen,yawMax,yawMax)
     pitchStappen = omitMaxValue(pitchPositie,pitchStappen,pitchMax,pitchMax)
