@@ -42,14 +42,12 @@ while True:
     pitchStappen = random.randint(-800,800)
     rollStappen = random.randint(-800,800)
 
-    print(yawStappen, ', ', pitchStappen, ', ', rollStappen, '/n')
 
     # Make sure the maximum potmeter valus are not exceeded
-    yawStappen = omitMaxValue(yawPositie,yawStappen,yawMax,yawMax)
-    pitchStappen = omitMaxValue(pitchPositie,pitchStappen,pitchMax,pitchMax)
-    rollStappen = omitMaxValue(rollPositie,rollStappen,rollMax,rollMax)
+    yawStappen = omitMaxValue(yawPositie,yawStappen,yawMin,yawMax)
+    pitchStappen = omitMaxValue(pitchPositie,pitchStappen,pitchMin,pitchMax)
+    rollStappen = omitMaxValue(rollPositie,rollStappen,rollMin,rollMax)
 
-    print(yawStappen, ', ', pitchStappen, ', ', rollStappen, '/n')
 
     # Subdivide the steps to set the steps/time for the servos
     yawOnderverdeeld = int(float(yawStappen)/draaitijd)
