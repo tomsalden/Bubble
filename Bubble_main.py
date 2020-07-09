@@ -47,6 +47,8 @@ while True:
     pitchStappen = omitMaxValue(pitchPositie,pitchStappen,pitchMax,pitchMax)
     rollStappen = omitMaxValue(rollPositie,rollStappen,rollMax,rollMax)
 
+    print(yawStappen + ', ' + pitchStappen + ', ' + rollStappen + '/n')
+
     # Subdivide the steps to set the steps/time for the servos
     yawOnderverdeeld = int(float(yawStappen)/draaitijd)
     pitchOnderverdeeld = int(float(pitchStappen)/draaitijd)
