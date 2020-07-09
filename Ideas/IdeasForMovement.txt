@@ -1,0 +1,2 @@
+- Positiebased beweging
+- soms extra stappen zetten op basis van totaal aantal stappen
