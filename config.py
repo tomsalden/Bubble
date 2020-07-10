@@ -1,5 +1,5 @@
 # config.py>
-
+import pigpio
 # Define global variables
 
 # Initialisations
