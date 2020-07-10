@@ -9,7 +9,7 @@ from time import sleep
 import random
 import config
 import omitMaxValue
-import moveServos
+#import moveServos
 
 yawMin = 1000
 yawMax = 2000
@@ -19,9 +19,9 @@ rollMin = 1100
 rollMax = 1900
 
 # Set the servos to their middle values
-config.pi.set_servo_pulsewidth(config.yawServo, middle)
-config.pi.set_servo_pulsewidth(config.pitchServo, middle)
-config.pi.set_servo_pulsewidth(config.rollServo, middle)
+config.pi.set_servo_pulsewidth(config.yawServo, config.middle)
+config.pi.set_servo_pulsewidth(config.pitchServo, config.middle)
+config.pi.set_servo_pulsewidth(config.rollServo, config.middle)
 
 
 # Program loop
