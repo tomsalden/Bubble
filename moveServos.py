@@ -48,3 +48,5 @@ def moveTotalSteps():
             config.pi.set_servo_pulsewidth(config.rollServo, config.rollPosition)
 
         sleep(config.sleepTime)
+
+    print(yawSteps,yawPosition)
