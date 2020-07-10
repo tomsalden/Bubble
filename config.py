@@ -19,3 +19,5 @@ totalSteps = 20
 yawSteps = 100
 pitchSteps = 100
 rollSteps = 100
+
+sleepTime = 0.04

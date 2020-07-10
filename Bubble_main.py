@@ -9,7 +9,7 @@ from time import sleep
 import random
 import config
 import omitMaxValue
-#import moveServos
+import moveServos
 
 yawMin = 1000
 yawMax = 2000
@@ -38,23 +38,7 @@ while True:
     config.pitchSteps = omitMaxValue.MaxValue(config.pitchPosition,config.pitchSteps,pitchMin,pitchMax)
     config.rollSteps = omitMaxValue.MaxValue(config.rollPosition,config.rollSteps,rollMin,rollMax)
 
-
-    # Subdivide the steps to set the steps/time for the servos
-    yawDivided = int(float(config.yawSteps)/config.totalSteps)
-    pitchDivided = int(float(config.pitchSteps)/config.totalSteps)
-    rollDivided = int(float(config.rollSteps)/config.totalSteps)
-
-    # Run the servo sequence
-    for x in range(0,config.totalSteps):
-        config.yawPosition = config.yawPosition + yawDivided
-        config.pitchPosition = config.pitchPosition + pitchDivided
-        config.rollPosition = config.rollPosition + rollDivided
-
-        config.pi.set_servo_pulsewidth(config.yawServo, config.yawPosition)
-        config.pi.set_servo_pulsewidth(config.pitchServo, config.pitchPosition)
-        config.pi.set_servo_pulsewidth(config.rollServo, config.rollPosition)
-
-        sleep(0.04)
+    moveServos.moveTotalSteps()
 
     # Turn off the servos
     config.pi.set_servo_pulsewidth(config.yawServo, 0)
