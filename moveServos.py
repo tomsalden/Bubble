@@ -49,4 +49,4 @@ def moveTotalSteps():
 
         sleep(config.sleepTime)
 
-    print(yawSteps,yawPosition)
+    print(config.yawSteps,config.yawPosition)
