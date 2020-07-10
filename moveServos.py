@@ -10,9 +10,9 @@ def moveTotalSteps():
     pitchDivided = int(float(config.pitchSteps)/config.totalSteps)
     rollDivided = int(float(config.rollSteps)/config.totalSteps)
 
-    yawRest = config.yawSteps - (yawDivided * config.totalSteps)
-    pitchRest = config.pitchSteps - (pitchDivided * config.totalSteps)
-    rollRest = config.rollSteps - (rollDivided * config.totalSteps)
+    yawRest = abs(config.yawSteps - (yawDivided * config.totalSteps))
+    pitchRest = abs(config.pitchSteps - (pitchDivided * config.totalSteps))
+    rollRest = abs(config.rollSteps - (rollDivided * config.totalSteps))
 
     yawStartExtraStep = config.totalSteps - yawRest
     pitchStartExtraStep = config.totalSteps - pitchRest
