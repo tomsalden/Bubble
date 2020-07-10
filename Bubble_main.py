@@ -38,12 +38,10 @@ while True:
     config.pitchSteps = omitMaxValue.MaxValue(config.pitchPosition,config.pitchSteps,pitchMin,pitchMax)
     config.rollSteps = omitMaxValue.MaxValue(config.rollPosition,config.rollSteps,rollMin,rollMax)
 
+    # Move the servos to the right place in the right time
     moveServos.moveTotalSteps()
 
     # Turn off the servos
     config.pi.set_servo_pulsewidth(config.yawServo, 0)
     config.pi.set_servo_pulsewidth(config.pitchServo, 0)
     config.pi.set_servo_pulsewidth(config.rollServo, 0)
-
-    #sleep(1)
-    #test erbij
