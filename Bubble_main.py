@@ -57,9 +57,9 @@ while True:
         sleep(0.04)
 
     # Turn off the servos
-    pi.set_servo_pulsewidth(config.yawServo, 0)
-    pi.set_servo_pulsewidth(config.pitchServo, 0)
-    pi.set_servo_pulsewidth(config.rollServo, 0)
+    config.pi.set_servo_pulsewidth(config.yawServo, 0)
+    config.pi.set_servo_pulsewidth(config.pitchServo, 0)
+    config.pi.set_servo_pulsewidth(config.rollServo, 0)
 
     #sleep(1)
     #test erbij
