@@ -1,6 +1,7 @@
 # Make sure the servos move the right amount of steps in the right amount of time
 
 import config
+from time import sleep
 
 def moveTotalSteps():
 
