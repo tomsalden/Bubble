@@ -37,13 +37,13 @@ def moveTotalSteps():
             config.rollPosition = config.rollPosition + rollDivided + 1
 
         # Set the servos to the right step each time, but leave them off if they don't have steps
-        if yawDivided && yawRest:
+        if yawDivided and yawRest:
             config.pi.set_servo_pulsewidth(config.yawServo, config.yawPosition)
-            
-        if pitchDivided && pitchRest:
+
+        if pitchDivided and pitchRest:
             config.pi.set_servo_pulsewidth(config.pitchServo, config.pitchPosition)
 
-        if rollDivided && rollRest:
+        if rollDivided and rollRest:
             config.pi.set_servo_pulsewidth(config.rollServo, config.rollPosition)
 
         sleep(config.sleepTime)
