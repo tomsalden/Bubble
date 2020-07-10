@@ -7,7 +7,7 @@
 import pigpio
 from time import sleep
 import random
-import initialisation
+import config
 import omitMaxValue
 import moveServos
 
