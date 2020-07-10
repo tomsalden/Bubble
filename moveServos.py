@@ -10,6 +10,21 @@ def moveTotalSteps():
     pitchDivided = int(float(config.pitchSteps)/config.totalSteps)
     rollDivided = int(float(config.rollSteps)/config.totalSteps)
 
+    if yawDivided > 0:
+        yawExtraStep = 1
+    else:
+        yawExtraStep = -1
+
+    if pitchDivided > 0:
+        pitchExtraStep = 1
+    else:
+        pitchExtraStep = -1
+
+    if rollDivided > 0:
+        rollExtraStep = 1
+    else:
+        rollExtraStep = -1
+
     yawRest = abs(config.yawSteps - (yawDivided * config.totalSteps))
     pitchRest = abs(config.pitchSteps - (pitchDivided * config.totalSteps))
     rollRest = abs(config.rollSteps - (rollDivided * config.totalSteps))
@@ -25,17 +40,17 @@ def moveTotalSteps():
         if x < yawStartExtraStep:
             config.yawPosition = config.yawPosition + yawDivided
         else:
-            config.yawPosition = config.yawPosition + yawDivided + 1
+            config.yawPosition = config.yawPosition + yawDivided + yawExtraStep
 
         if x < pitchStartExtraStep:
             config.pitchPosition = config.pitchPosition + pitchDivided
         else:
-            config.pitchPosition = config.pitchPosition + pitchDivided + 1
+            config.pitchPosition = config.pitchPosition + pitchDivided + pitchExtraStep
 
         if x < rollStartExtraStep:
             config.rollPosition = config.rollPosition + rollDivided
         else:
-            config.rollPosition = config.rollPosition + rollDivided + 1
+            config.rollPosition = config.rollPosition + rollDivided + rollExtraStep
 
         # Set the servos to the right step each time, but leave them off if they don't have steps
         if yawDivided and yawRest:
