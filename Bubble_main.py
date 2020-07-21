@@ -32,7 +32,7 @@ rollMax = 1900
 programCounter = 1
 
 # Define areas to look at
-headPositions = [[0,1,1],[1,1,1],[2,1,1],[1,0,1],[1,2,1],[1,1,0],[1,1,2],[0,1,1],[0,1,1],[0,1,1]]
+#headPositions = [[0,1,1],[1,1,1],[2,1,1],[1,0,1],[1,2,1],[1,1,0],[1,1,2],[0,1,1],[0,1,1],[0,1,1]]
 totalPositions = len(headPositions)
 
 # Up/down/middle
@@ -67,6 +67,7 @@ while True:
 
     # Set the new position of the servos according to the general position of the head and the speed at which this needs to happen
     config.totalSteps = random.randint(5,30)
+    headPositions = [[random.randint(0,2),random.randint(0,2),random.randint(0,2)]]
     newPitchPosition = determineNewPosition.newPosMaker(lookUp,lookMiddle,lookDown,headPositions[programCounter%totalPositions][0])
     newYawPosition = determineNewPosition.newPosMaker(lookLeft,lookCenter,lookRight,headPositions[programCounter%totalPositions][1])
     newRollPosition = determineNewPosition.newPosMaker(lookTiltLeft,lookStraight,lookTiltRight,headPositions[programCounter%totalPositions][2])
