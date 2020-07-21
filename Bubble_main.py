@@ -96,4 +96,4 @@ while True:
     config.pi.set_servo_pulsewidth(config.rollServo, 0)
 
     programCounter = programCounter + 1
-    pause(random.randint(100,2000))
+    sleep(random.randint(100,2000))
