@@ -91,9 +91,9 @@ while True:
     moveServos.moveTotalSteps()
 
     # Turn off the servos
-    #config.pi.set_servo_pulsewidth(config.yawServo, 0)
-    #config.pi.set_servo_pulsewidth(config.pitchServo, 0)
-    #config.pi.set_servo_pulsewidth(config.rollServo, 0)
+    config.pi.set_servo_pulsewidth(config.yawServo, 0)
+    config.pi.set_servo_pulsewidth(config.pitchServo, 0)
+    config.pi.set_servo_pulsewidth(config.rollServo, 0)
 
     programCounter = programCounter + 1
     sleep(random.randint(1,20)/10)
