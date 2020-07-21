@@ -60,9 +60,9 @@ while True:
 
     # Set the new position of the servos according to the general position of the head and the speed at which this needs to happen
     config.totalSteps = random.randint(20,51)
-    newPitchPosition = newPosMaker(lookUp,lookMiddle,lookDown,headPositions[programCounter%totalPositions][0])
-    newYawPosition = newPosMaker(lookLeft,lookCenter,lookRight,headPositions[programCounter%totalPositions][1])
-    newRollPosition = newPosMaker(lookTiltLeft,lookStraight,lookTiltRight,headPositions[programCounter%totalPositions][2])
+    newPitchPosition = determineNewPosition.newPosMaker(lookUp,lookMiddle,lookDown,headPositions[programCounter%totalPositions][0])
+    newYawPosition = determineNewPosition.newPosMaker(lookLeft,lookCenter,lookRight,headPositions[programCounter%totalPositions][1])
+    newRollPosition = determineNewPosition.newPosMaker(lookTiltLeft,lookStraight,lookTiltRight,headPositions[programCounter%totalPositions][2])
 
     # Calculate amount of steps necessary for new position
     config.yawSteps = newYawPosition - config.yawPosition
