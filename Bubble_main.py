@@ -7,6 +7,12 @@
 # pitch = look up/down = GPIO22
 # roll = tilt head = GPIO27
 
+# For general headpositions, the terminology is:
+# [0,1,2], where
+# First number = up/middle/down
+# Second number = left/center/right
+# Third number = tiltLeft/straight/tiltRight
+
 # General import statements
 import pigpio
 from time import sleep
@@ -60,7 +66,7 @@ while True:
     # config.rollSteps = random.randint(-800,800)
 
     # Set the new position of the servos according to the general position of the head and the speed at which this needs to happen
-    config.totalSteps = random.randint(20,51)
+    config.totalSteps = random.randint(5,30)
     newPitchPosition = determineNewPosition.newPosMaker(lookUp,lookMiddle,lookDown,headPositions[programCounter%totalPositions][0])
     newYawPosition = determineNewPosition.newPosMaker(lookLeft,lookCenter,lookRight,headPositions[programCounter%totalPositions][1])
     newRollPosition = determineNewPosition.newPosMaker(lookTiltLeft,lookStraight,lookTiltRight,headPositions[programCounter%totalPositions][2])
