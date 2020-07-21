@@ -64,6 +64,9 @@ while True:
     newYawPosition = determineNewPosition.newPosMaker(lookLeft,lookCenter,lookRight,headPositions[programCounter%totalPositions][1])
     newRollPosition = determineNewPosition.newPosMaker(lookTiltLeft,lookStraight,lookTiltRight,headPositions[programCounter%totalPositions][2])
 
+    print(headPositions[programCounter%totalPositions])
+
+
     # Calculate amount of steps necessary for new position
     config.yawSteps = newYawPosition - config.yawPosition
     config.pitchSteps = newPitchPosition - config.pitchPosition
