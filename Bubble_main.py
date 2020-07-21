@@ -15,6 +15,7 @@ import config
 import omitMaxValue
 import moveServos
 import determineNewPosition
+import printFunctions
 
 yawMin = 1000
 yawMax = 2000
@@ -64,6 +65,7 @@ while True:
     newYawPosition = determineNewPosition.newPosMaker(lookLeft,lookCenter,lookRight,headPositions[programCounter%totalPositions][1])
     newRollPosition = determineNewPosition.newPosMaker(lookTiltLeft,lookStraight,lookTiltRight,headPositions[programCounter%totalPositions][2])
 
+    printFunctions.clearPrints()
     print(headPositions[programCounter%totalPositions])
 
 
