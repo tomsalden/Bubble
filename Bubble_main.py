@@ -66,7 +66,7 @@ while True:
     newRollPosition = determineNewPosition.newPosMaker(lookTiltLeft,lookStraight,lookTiltRight,headPositions[programCounter%totalPositions][2])
 
     printFunctions.clearPrints()
-    print(headPositions[programCounter%totalPositions])
+    printFunctions.printHeadPosition(headPositions[programCounter%totalPositions])
 
 
     # Calculate amount of steps necessary for new position
