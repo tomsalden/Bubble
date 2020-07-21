@@ -7,6 +7,6 @@ Three servos are to be attached on the Raspberry, at pins:
 
 GPIO 17: Yaw
 
-GPIO 27: Pitch
+GPIO 22: Pitch
 
-GPIO 22: Roll
+GPIO 27: Roll
