@@ -9,4 +9,6 @@ def printHeadPosition(headPosition):
     f = open("Visuals/" + filename,'r')
     file_contents = f.read()
     print("\n")
+    print(headPosition)
+    print("\n")
     print(file_contents)
