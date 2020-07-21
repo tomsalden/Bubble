@@ -33,6 +33,7 @@ programCounter = 1
 
 # Define areas to look at
 #headPositions = [[0,1,1],[1,1,1],[2,1,1],[1,0,1],[1,2,1],[1,1,0],[1,1,2],[0,1,1],[0,1,1],[0,1,1]]
+headPositions = [[0,1,1]]
 totalPositions = len(headPositions)
 
 # Up/down/middle
