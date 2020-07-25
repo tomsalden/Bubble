@@ -25,10 +25,10 @@ import printFunctions
 
 yawMin = 1000
 yawMax = 2000
-pitchMin = 1200
+pitchMin = 1300
 pitchMax = 1900
-rollMin = 1100
-rollMax = 1900
+rollMin = 1000
+rollMax = 1800
 programCounter = 1
 
 # Define areas to look at
