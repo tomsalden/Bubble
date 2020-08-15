@@ -129,8 +129,8 @@ while True:
 
     #Move servos so the detectedCenter is in the middle of the frame
     #Yaw:
-    print(detectedCenterX)
-    print(detectedCenterY)
+    #print(detectedCenterX)
+    #print(detectedCenterY)
 
     if detectedCenterX < 80:
         angleX = math.degrees(math.atan((80 - detectedCenterX)/DistanceSubject))
@@ -143,7 +143,16 @@ while True:
 
     yawPosition = MoveServo.moveTotalSteps(extraStepsYaw,5,yawPosition,pi,yawServo,0.01)
 
+    #Pitch:
+    if detectedCenterY < 80:
+        angleX = math.degrees(math.atan((80 - detectedCenterY)/DistanceSubject))
+    else:
+        angleX = -math.degrees(math.atan((detectedCenterY - 80)/DistanceSubject))
 
+    extraStepsPitch = math.floor(angleX/(180/1000))
+    extraStepsPitch = omitMaxValue.MaxValue(PitchPosition,extraStepsPitch,PitchMin,PitchMax)
+
+    PitchPosition = MoveServo.moveTotalSteps(extraStepsPitch,5,PitchPosition,pi,PitchServo,0.01)
 
     k = cv2.waitKey(30) & 0xff
     if k == 27:
