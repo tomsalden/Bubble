@@ -135,7 +135,7 @@ while True:
     else:
         angleX = math.atan((detectedCenterX - 80)/157)
 
-    extraStepsYaw = floor(angleX/(1000/180))
+    extraStepsYaw = math.floor(angleX/(1000/180))
     extraStepsYaw = omitMaxValue.MaxValue(yawPosition,extraStepsYaw,yawMin,yawMax)
 
     yawPosition = moveTotalSteps(extraStepsYaw,1,yawPosition,pi,yawServo,0.4)
