@@ -145,7 +145,7 @@ while True:
     print("stappen om te zetten")
     print(extraStepsYaw)
 
-    yawPosition = MoveServo.moveTotalSteps(extraStepsYaw,1,yawPosition,pi,yawServo,0.4)
+    yawPosition = MoveServo.moveTotalSteps(extraStepsYaw,5,yawPosition,pi,yawServo,0.01)
 
 
 
