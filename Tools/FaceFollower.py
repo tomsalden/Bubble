@@ -1,11 +1,12 @@
 import sys
 sys.path.append('/usr/local/lib/python3.7/site-packages/cv2/python-3.7')
+sys.path.append("..")
 
 import cv2, queue, threading, time, os
 import numpy as np
 import pigpio
 import math
-import ..omitMaxValue
+import omitMaxValue
 import MoveServo
 
 os.chdir("/home/pi/opencv-4.4.0/data/haarcascades")
