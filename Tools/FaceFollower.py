@@ -36,7 +36,7 @@ pi.set_servo_pulsewidth(yawServo, yawPosition)
 pi.set_servo_pulsewidth(pitchServo, pitchPosition)
 pi.set_servo_pulsewidth(rollServo, rollPosition)
 
-DistanceSubject = 140 #Estimated 157, tuned to this value
+DistanceSubject = 130 #Estimated 157, tuned to this value
 
 
 #Due to fov of camera and resolution:
