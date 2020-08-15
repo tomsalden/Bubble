@@ -140,6 +140,9 @@ while True:
 
     extraStepsYaw = math.floor(angleX/(180/1000))
 
+    print("stappen om te zetten")
+    print(extraStepsYaw)
+
     extraStepsYaw = omitMaxValue.MaxValue(yawPosition,extraStepsYaw,yawMin,yawMax)
 
     print("stappen om te zetten")
