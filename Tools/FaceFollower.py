@@ -145,9 +145,9 @@ while True:
 
     #Pitch:
     if detectedCenterY < 60:
-        angleX = math.degrees(math.atan((60 - detectedCenterY)/DistanceSubject))
+        angleX = -math.degrees(math.atan((60 - detectedCenterY)/DistanceSubject))
     else:
-        angleX = -math.degrees(math.atan((detectedCenterY - 60)/DistanceSubject))
+        angleX = math.degrees(math.atan((detectedCenterY - 60)/DistanceSubject))
 
     extraStepsPitch = math.floor(angleX/(180/1000))
     extraStepsPitch = omitMaxValue.MaxValue(pitchPosition,extraStepsPitch,pitchMin,pitchMax)
