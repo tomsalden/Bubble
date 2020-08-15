@@ -4,17 +4,17 @@ import random
 
 # connect to the
 pi = pigpio.pi()
-yawServo = 17     #Servo op z'n hoofd
-pitchServo = 22   #Servo voor schuinkijken
-rollServo = 27    #Servo voor hoofddraaien
+yawServo = 27     #Servo op z'n hoofd
+pitchServo = 14   #Servo voor schuinkijken
+rollServo = 22    #Servo voor hoofddraaien
 
 midden = 1500
-yawMin = 1000
-yawMax = 2000
+yawMin = 1200
+yawMax = 1800
 pitchMin = 1200
-pitchMax = 1900
-rollMin = 1100
-rollMax = 1900
+pitchMax = 1800
+rollMin = 1200
+rollMax = 1800
 
 pi.set_servo_pulsewidth(yawServo, midden)
 pi.set_servo_pulsewidth(pitchServo, midden)
