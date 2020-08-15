@@ -138,7 +138,7 @@ while True:
     extraStepsYaw = angleX/(1000/180)
     extraStepsYaw = omitMaxValue.MaxValue(yawPosition,extraStepsYaw,yawMin,yawMax)
 
-    yawPosition = moveTotalSteps(extraStepsYaw,1,yawPosition,pi,yawServo,0.4):
+    yawPosition = moveTotalSteps(extraStepsYaw,1,yawPosition,pi,yawServo,0.4)
 
 
 
