@@ -4,6 +4,9 @@ sys.path.append('/usr/local/lib/python3.7/site-packages/cv2/python-3.7')
 import cv2, queue, threading, time, os
 import numpy as np
 import pigpio
+import math
+import ..omitMaxValue
+import MoveServo
 
 os.chdir("/home/pi/opencv-4.4.0/data/haarcascades")
 
@@ -31,6 +34,9 @@ rollPosition = midden
 pi.set_servo_pulsewidth(yawServo, yawPosition)
 pi.set_servo_pulsewidth(pitchServo, pitchPosition)
 pi.set_servo_pulsewidth(rollServo, rollPosition)
+
+detectedCenterX = 80
+detectedCenterY = 60
 
 
 #Due to fov of camera and resolution:
@@ -113,9 +119,7 @@ while True:
                     roi_color = img[y:y+h, x:x+w]
                     detectedCenterX = x + 1/2*w
                     detectedCenterY = y + 1/2*h
-            else:
-                detectedCenterX = 80
-                detectedCenterY = 60
+
 
     cv2.imshow("img", img)
 
@@ -124,6 +128,17 @@ while True:
     #Yaw:
     print(detectedCenterX)
     print(detectedCenterY)
+
+    if detectedCenterX < 80:
+        -angleX = math.atan((80 - detectedCenterX)/157)
+    else:
+        angleX = (math.atan((detectedCenter - 80)/157))
+
+    extraStepsYaw = angleX/(1000/180)
+    extraStepsYaw = omitMaxValue.MaxValue(yawPosition,extraStepsYaw,yawMin,yawMax)
+
+    yawPosition = moveTotalSteps(extraStepsYaw,1,yawPosition,pi,yawServo,0.4):
+
 
 
     k = cv2.waitKey(30) & 0xff
