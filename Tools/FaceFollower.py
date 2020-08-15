@@ -135,8 +135,15 @@ while True:
     else:
         angleX = math.atan((detectedCenterX - 80)/157)
 
+    print("Hoek om te bewegen")
+    print(angleX)
+
     extraStepsYaw = math.floor(angleX/(1000/180))
+
     extraStepsYaw = omitMaxValue.MaxValue(yawPosition,extraStepsYaw,yawMin,yawMax)
+
+    print("stappen om te zetten")
+    print(extraStepsYaw)
 
     yawPosition = MoveServo.moveTotalSteps(extraStepsYaw,1,yawPosition,pi,yawServo,0.4)
 
