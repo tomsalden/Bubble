@@ -36,8 +36,7 @@ pi.set_servo_pulsewidth(yawServo, yawPosition)
 pi.set_servo_pulsewidth(pitchServo, pitchPosition)
 pi.set_servo_pulsewidth(rollServo, rollPosition)
 
-detectedCenterX = 80
-detectedCenterY = 60
+DistanceSubject = 140 #Estimated 157, tuned to this value
 
 
 #Due to fov of camera and resolution:
@@ -120,6 +119,9 @@ while True:
                     roi_color = img[y:y+h, x:x+w]
                     detectedCenterX = x + 1/2*w
                     detectedCenterY = y + 1/2*h
+            else:
+                detectedCenterX = 80
+                detectedCenterY = 60
 
 
     cv2.imshow("img", img)
@@ -131,22 +133,13 @@ while True:
     print(detectedCenterY)
 
     if detectedCenterX < 80:
-        angleX = math.degrees(math.atan((80 - detectedCenterX)/157))
+        angleX = math.degrees(math.atan((80 - detectedCenterX)/DistanceSubject))
     else:
-        angleX = -math.degrees(math.atan((detectedCenterX - 80)/157))
+        angleX = -math.degrees(math.atan((detectedCenterX - 80)/DistanceSubject))
 
-    print("Hoek om te bewegen")
-    print(angleX)
 
     extraStepsYaw = math.floor(angleX/(180/1000))
-
-    print("stappen om te zetten")
-    print(extraStepsYaw)
-
     extraStepsYaw = omitMaxValue.MaxValue(yawPosition,extraStepsYaw,yawMin,yawMax)
-
-    print("stappen om te zetten")
-    print(extraStepsYaw)
 
     yawPosition = MoveServo.moveTotalSteps(extraStepsYaw,5,yawPosition,pi,yawServo,0.01)
 
