@@ -144,10 +144,10 @@ while True:
     yawPosition = MoveServo.moveTotalSteps(extraStepsYaw,5,yawPosition,pi,yawServo,0.01)
 
     #Pitch:
-    if detectedCenterY < 80:
-        angleX = math.degrees(math.atan((80 - detectedCenterY)/DistanceSubject))
+    if detectedCenterY < 60:
+        angleX = math.degrees(math.atan((60 - detectedCenterY)/DistanceSubject))
     else:
-        angleX = -math.degrees(math.atan((detectedCenterY - 80)/DistanceSubject))
+        angleX = -math.degrees(math.atan((detectedCenterY - 60)/DistanceSubject))
 
     extraStepsPitch = math.floor(angleX/(180/1000))
     extraStepsPitch = omitMaxValue.MaxValue(PitchPosition,extraStepsPitch,PitchMin,PitchMax)
