@@ -138,7 +138,7 @@ while True:
     print("Hoek om te bewegen")
     print(angleX)
 
-    extraStepsYaw = math.floor(angleX/(1000/180))
+    extraStepsYaw = math.floor(angleX/(180/1000))
 
     extraStepsYaw = omitMaxValue.MaxValue(yawPosition,extraStepsYaw,yawMin,yawMax)
 
