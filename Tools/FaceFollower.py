@@ -152,7 +152,7 @@ while True:
     extraStepsPitch = math.floor(angleX/(180/1000))
     extraStepsPitch = omitMaxValue.MaxValue(PitchPosition,extraStepsPitch,PitchMin,PitchMax)
 
-    PitchPosition = MoveServo.moveTotalSteps(extraStepsPitch,5,PitchPosition,pi,PitchServo,0.01)
+    pitchPosition = MoveServo.moveTotalSteps(extraStepsPitch,5,PitchPosition,pi,PitchServo,0.01)
 
     k = cv2.waitKey(30) & 0xff
     if k == 27:
