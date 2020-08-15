@@ -113,7 +113,9 @@ while True:
                     roi_color = img[y:y+h, x:x+w]
                     detectedCenterX = x + 1/2*w
                     detectedCenterY = y + 1/2*h
-
+            else:
+                detectedCenterX = 80
+                detectedCenterY = 60
 
     cv2.imshow("img", img)
 
