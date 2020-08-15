@@ -12,7 +12,7 @@ def moveTotalSteps(servoSteps,totalSteps,servoPosition,servoObject,servoPin,slee
     else:
         servoExtraStep = -1
 
-    servoRest = abs(servoSteps - (yawDivided * totalSteps))
+    servoRest = abs(servoSteps - (servoDivided * totalSteps))
     servoStartExtraStep = totalSteps - servoRest
 
 
