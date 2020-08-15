@@ -150,7 +150,7 @@ while True:
         angleX = -math.degrees(math.atan((detectedCenterY - 60)/DistanceSubject))
 
     extraStepsPitch = math.floor(angleX/(180/1000))
-    extraStepsPitch = omitMaxValue.MaxValue(PitchPosition,extraStepsPitch,PitchMin,PitchMax)
+    extraStepsPitch = omitMaxValue.MaxValue(pitchPosition,extraStepsPitch,PitchMin,PitchMax)
 
     pitchPosition = MoveServo.moveTotalSteps(extraStepsPitch,5,PitchPosition,pi,PitchServo,0.01)
 
