@@ -131,9 +131,9 @@ while True:
     print(detectedCenterY)
 
     if detectedCenterX < 80:
-        angleX = -math.degrees(math.atan2((80 - detectedCenterX)/157))
+        angleX = -math.degrees(math.atan((80 - detectedCenterX),157))
     else:
-        angleX = math.degrees(math.atan2((detectedCenterX - 80)/157))
+        angleX = math.degrees(math.atan((detectedCenterX - 80),157))
 
     print("Hoek om te bewegen")
     print(angleX)
