@@ -131,9 +131,15 @@ while True:
     print(detectedCenterY)
 
     if detectedCenterX < 80:
+<<<<<<< HEAD
         angleX = -math.atan((80 - detectedCenterX)/157)
     else:
         angleX = math.atan((detectedCenter - 80)/157)
+=======
+        -angleX = floor(math.atan((80 - detectedCenterX)/157))
+    else:
+        angleX = floor(math.atan((detectedCenter - 80)/157))
+>>>>>>> aba8b4ab4337a924c29df052ffb7cad6135250f0
 
     extraStepsYaw = floor(angleX/(1000/180))
     extraStepsYaw = omitMaxValue.MaxValue(yawPosition,extraStepsYaw,yawMin,yawMax)
