@@ -150,9 +150,9 @@ while True:
         angleX = -math.degrees(math.atan((detectedCenterY - 60)/DistanceSubject))
 
     extraStepsPitch = math.floor(angleX/(180/1000))
-    extraStepsPitch = omitMaxValue.MaxValue(pitchPosition,extraStepsPitch,PitchMin,PitchMax)
+    extraStepsPitch = omitMaxValue.MaxValue(pitchPosition,extraStepsPitch,pitchMin,pitchMax)
 
-    pitchPosition = MoveServo.moveTotalSteps(extraStepsPitch,5,PitchPosition,pi,PitchServo,0.01)
+    pitchPosition = MoveServo.moveTotalSteps(extraStepsPitch,5,pitchPosition,pi,pitchServo,0.01)
 
     k = cv2.waitKey(30) & 0xff
     if k == 27:
