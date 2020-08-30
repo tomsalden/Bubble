@@ -26,9 +26,9 @@ import printFunctions
 yawMin = 1000
 yawMax = 2000
 pitchMin = 1300
-pitchMax = 1900
-rollMin = 1000
-rollMax = 1800
+pitchMax = 1750
+rollMin = 1350
+rollMax = 1850
 programCounter = 1
 
 # Define areas to look at
@@ -67,7 +67,7 @@ while True:
     # config.rollSteps = random.randint(-800,800)
 
     # Set the new position of the servos according to the general position of the head and the speed at which this needs to happen
-    config.totalSteps = random.randint(10,25)
+    config.totalSteps = random.randint(30,40)
     headPositions = [[random.randint(0,2),random.randint(0,2),random.randint(0,2)]]
     newPitchPosition = determineNewPosition.newPosMaker(lookUp,lookMiddle,lookDown,headPositions[programCounter%totalPositions][0])
     newYawPosition = determineNewPosition.newPosMaker(lookLeft,lookCenter,lookRight,headPositions[programCounter%totalPositions][1])
@@ -75,7 +75,8 @@ while True:
 
     printFunctions.clearPrints()
     printFunctions.printHeadPosition(headPositions[programCounter%totalPositions])
-
+    
+    #print(config.rollPosition, newRollPosition)
 
     # Calculate amount of steps necessary for new position
     config.yawSteps = newYawPosition - config.yawPosition
@@ -91,9 +92,9 @@ while True:
     moveServos.moveTotalSteps()
 
     # Turn off the servos
-    config.pi.set_servo_pulsewidth(config.yawServo, 0)
-    config.pi.set_servo_pulsewidth(config.pitchServo, 0)
-    config.pi.set_servo_pulsewidth(config.rollServo, 0)
+    #config.pi.set_servo_pulsewidth(config.yawServo, 0)
+    #config.pi.set_servo_pulsewidth(config.pitchServo, 0)
+    #config.pi.set_servo_pulsewidth(config.rollServo, 0)
 
     programCounter = programCounter + 1
-    sleep(random.randint(1,20)/10)
+    sleep(random.randint(5,100)/10)

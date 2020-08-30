@@ -4,9 +4,9 @@ import pigpio
 
 # Initialisations
 pi = pigpio.pi()
-yawServo = 17     #Servo op z'n hoofd
-pitchServo = 22   #Servo voor schuinkijken
-rollServo = 27    #Servo voor hoofddraaien
+yawServo = 14     #Servo op z'n hoofd
+pitchServo = 15   #Servo voor schuinkijken
+rollServo = 18    #Servo voor hoofddraaien
 
 # Initial values for the variables
 middle = 1500

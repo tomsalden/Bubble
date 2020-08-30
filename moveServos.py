@@ -12,18 +12,24 @@ def moveTotalSteps():
 
     if yawDivided > 0:
         yawExtraStep = 1
-    else:
+    elif yawDivided < 0:
         yawExtraStep = -1
+    else:
+        yawExtraStep = 0
 
     if pitchDivided > 0:
         pitchExtraStep = 1
-    else:
+    elif pitchDivided < 0:
         pitchExtraStep = -1
+    else:
+        pitchExtraStep = 0
 
     if rollDivided > 0:
         rollExtraStep = 1
-    else:
+    elif rollDivided < 0:
         rollExtraStep = -1
+    else:
+        rollExtraStep = 0
 
     yawRest = abs(config.yawSteps - (yawDivided * config.totalSteps))
     pitchRest = abs(config.pitchSteps - (pitchDivided * config.totalSteps))
@@ -32,6 +38,8 @@ def moveTotalSteps():
     yawStartExtraStep = config.totalSteps - yawRest
     pitchStartExtraStep = config.totalSteps - pitchRest
     rollStartExtraStep = config.totalSteps - rollRest
+    
+    #print(yawDivided, pitchDivided, rollDivided)
 
     # Run the servo sequence
     for x in range(0,config.totalSteps):
