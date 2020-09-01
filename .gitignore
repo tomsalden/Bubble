@@ -1,0 +1,8 @@
+# Don't track content of these folders
+
+Tests/
+
+
+# Don't track these file-extensions #
+###################
+*.pyc
