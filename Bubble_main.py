@@ -22,6 +22,8 @@ import omitMaxValue
 import moveServos
 import determineNewPosition
 import printFunctions
+import TerminalDisplay
+import _thread
 
 yawMin = 1000
 yawMax = 2000
@@ -57,44 +59,61 @@ config.pi.set_servo_pulsewidth(config.yawServo, config.middle)
 config.pi.set_servo_pulsewidth(config.pitchServo, config.middle)
 config.pi.set_servo_pulsewidth(config.rollServo, config.middle)
 
+def BubbleMainLoop():
+    # Program loop
+    while True:
+        global programCounter
+        global headPositions
+        # # Get the random integers for rotating the head
+        # config.totalSteps = random.randint(20,51)
+        # config.yawSteps = random.randint(-1000,1000)
+        # config.pitchSteps = random.randint(-800,800)
+        # config.rollSteps = random.randint(-800,800)
 
-# Program loop
-while True:
-    # # Get the random integers for rotating the head
-    # config.totalSteps = random.randint(20,51)
-    # config.yawSteps = random.randint(-1000,1000)
-    # config.pitchSteps = random.randint(-800,800)
-    # config.rollSteps = random.randint(-800,800)
+        # Set the new position of the servos according to the general position of the head and the speed at which this needs to happen
+        config.totalSteps = random.randint(30,40)
+        headPositions = [[random.randint(0,2),random.randint(0,2),random.randint(0,2)]]
+        newPitchPosition = determineNewPosition.newPosMaker(lookUp,lookMiddle,lookDown,headPositions[programCounter%totalPositions][0])
+        newYawPosition = determineNewPosition.newPosMaker(lookLeft,lookCenter,lookRight,headPositions[programCounter%totalPositions][1])
+        newRollPosition = determineNewPosition.newPosMaker(lookTiltLeft,lookStraight,lookTiltRight,headPositions[programCounter%totalPositions][2])
+        config.currentHeadPosition = headPositions[programCounter%totalPositions]
 
-    # Set the new position of the servos according to the general position of the head and the speed at which this needs to happen
-    config.totalSteps = random.randint(30,40)
-    headPositions = [[random.randint(0,2),random.randint(0,2),random.randint(0,2)]]
-    newPitchPosition = determineNewPosition.newPosMaker(lookUp,lookMiddle,lookDown,headPositions[programCounter%totalPositions][0])
-    newYawPosition = determineNewPosition.newPosMaker(lookLeft,lookCenter,lookRight,headPositions[programCounter%totalPositions][1])
-    newRollPosition = determineNewPosition.newPosMaker(lookTiltLeft,lookStraight,lookTiltRight,headPositions[programCounter%totalPositions][2])
+        #printFunctions.clearPrints()
+        #printFunctions.printHeadPosition(headPositions[programCounter%totalPositions])
 
-    printFunctions.clearPrints()
-    printFunctions.printHeadPosition(headPositions[programCounter%totalPositions])
-    
-    #print(config.rollPosition, newRollPosition)
+        #print(config.rollPosition, newRollPosition)
 
-    # Calculate amount of steps necessary for new position
-    config.yawSteps = newYawPosition - config.yawPosition
-    config.pitchSteps = newPitchPosition - config.pitchPosition
-    config.rollSteps = newRollPosition - config.rollPosition
+        # Calculate amount of steps necessary for new position
+        config.yawSteps = newYawPosition - config.yawPosition
+        config.pitchSteps = newPitchPosition - config.pitchPosition
+        config.rollSteps = newRollPosition - config.rollPosition
 
-    # Make sure the maximum potmeter valus are not exceeded
-    config.yawSteps = omitMaxValue.MaxValue(config.yawPosition,config.yawSteps,yawMin,yawMax)
-    config.pitchSteps = omitMaxValue.MaxValue(config.pitchPosition,config.pitchSteps,pitchMin,pitchMax)
-    config.rollSteps = omitMaxValue.MaxValue(config.rollPosition,config.rollSteps,rollMin,rollMax)
+        # Make sure the maximum potmeter valus are not exceeded
+        config.yawSteps = omitMaxValue.MaxValue(config.yawPosition,config.yawSteps,yawMin,yawMax)
+        config.pitchSteps = omitMaxValue.MaxValue(config.pitchPosition,config.pitchSteps,pitchMin,pitchMax)
+        config.rollSteps = omitMaxValue.MaxValue(config.rollPosition,config.rollSteps,rollMin,rollMax)
 
-    # Move the servos to the right place in the right time
-    moveServos.moveTotalSteps()
+        # Move the servos to the right place in the right time
+        moveServos.moveTotalSteps()
 
-    # Turn off the servos
-    #config.pi.set_servo_pulsewidth(config.yawServo, 0)
-    #config.pi.set_servo_pulsewidth(config.pitchServo, 0)
-    #config.pi.set_servo_pulsewidth(config.rollServo, 0)
+        # Turn off the servos
+        #config.pi.set_servo_pulsewidth(config.yawServo, 0)
+        #config.pi.set_servo_pulsewidth(config.pitchServo, 0)
+        #config.pi.set_servo_pulsewidth(config.rollServo, 0)
 
-    programCounter = programCounter + 1
-    sleep(random.randint(5,100)/10)
+        programCounter = programCounter + 1
+        sleep(random.randint(5,100)/10)
+
+def main():
+    try:
+        _thread.start_new_thread(BubbleMainLoop,())
+        _thread.start_new_thread(TerminalDisplay.TerminalStarter,())
+
+    except:
+        print("Error: unable to start thread")
+    while 1:
+        pass
+
+
+if __name__ == "__main__":
+        main()
