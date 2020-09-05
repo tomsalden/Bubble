@@ -1,0 +1,418 @@
+[?1049h[22;0;0t[1;50r(B[m[4l[?7h[?1h=[?25l[39;49m[39;49m[37m[40m[1;1H                                                                                                                        [2;1H                                                                                                                        [3;1H                                                                                                                        [4;1H                                                                                                                        [5;1H                                                                                                                        [6;1H                                                                                                                        [7;1H                                                                                                                        [8;1H                                                                                                                        [9;1H                                                                                                                        [10;1H                                                                                                                        [11;1H                                                                                                                        [12;1H                                                                                                                        [13;1H                                                                                                                        [14;1H                                                                                                                        [15;1H                                                                                                                        [16;1H                                                                                                                        [17;1H                                                                                                                        [18;1H                                                                                                                        [19;1H                                                                                                                        [20;1H                                                                                                                        [21;1H                                                                                                                        [22;1H                                                                                                                        [23;1H                                                                                                                        [24;1H                                                                                                                        [25;1H                                                                                                                        [26;1H                                                                                                                        [27;1H                                                                                                                        [28;1H                                                                                                                        [29;1H                                                                                                                        [30;1H                                                                                                                        [31;1H                                                                                                                        [32;1H                                                                                                                        [33;1H                                                                                                                        [34;1H                                                                                                                        [35;1H                                                                                                                        [36;1H                                                                                                                        [37;1H                                                                                                                        [38;1H                                                                                                                        [39;1H                                                                                                                        [40;1H                                                                                                                        [41;1H                                                                                                                        [42;1H                                                                                                                        [43;1H                                                                                                                        [44;1H                                                                                                                        [45;1H                                                                                                                        [46;1H                                                                                                                        [47;1H                                                                                                                        [48;1H                                                                                                                        [49;1H                                                                                                                        [50;1H                                                                                                                       [?7l [?7h[H
+ (0[0m[39;49m[37m[40mlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk(B[39;49m[37m[40m[3;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m  ____[3;17H_     _     _[3;39H_____[3;56H_[3;70H_    _____[3;91H_[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[4;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m |  _ \[16G| |   | |   | |[38G/ ____|[4;55H| |[4;69H| |  / ____|[4;90H| |[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[5;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m | |_) |_   _| |__ | |__ | | ___  | |     ___  _ __ | |_ _ __ ___ | | | |     ___ _ __ | |_ ___ _ __[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[6;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m |  _ <| | | | '_ \| '_ \| |/ _ \ | |    / _ \| '_ \| __| '__/ _ \| | | |    / _ \ '_ \| __/ _ \ '__|[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[7;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m | |_) | |_| | |_) | |_) | |  __/ | |___| (_) | | | | |_| | | (_) | | | |___|  __/ | | | ||  __/ |[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[8;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m |____/ \__,_|_.__/|_.__/|_|\___|  \_____\___/|_| |_|\__|_|  \___/|_|  \_____\___|_| |_|\__\___|_|[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[9;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[10;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[11;2H(0[0m[39;49m[37m[40mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj(B[39;49m[37m[40m[8;101H(0[0m[39;49m[37m[40m(B[39;49m[37m[40m
+
+
+
+ (0[0m[39;49m[37m[40mlqqqqqqqqqk(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40mCurrent  (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40mPosition (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m---------(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m    _    (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m /  .  \ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m|  o o  |(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m \  _  / (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[20;12H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[21;12H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m---------(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40mTilted   (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m Straight(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mmqqqqqqqqqj(B[39;49m[37m[40m[A(0[0m[39;49m[37m[40m(B[39;49m[37m[40m
+
+ (0[0m[39;49m[37m[40mlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40mServo range:[27;34H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m-------------------------------(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[29;34H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40mYaw: 1500[30;34H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m################---------------(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[32;34H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40mPitch: 1500[33;34H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m##############-----------------(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[35;34H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40mRoll: 1500[36;34H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m#########----------------------(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[38;34H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m
+ (0[0m[39;49m[37m[40mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqj(B[39;49m[37m[40m[37;12H(0[0m[39;49m[37m[40m(B[39;49m[37m[40m[12;13H(0[0m[39;49m[37m[40mlqqqqqqqqqk(B[39;49m[37m[40m[13;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40mCurrent  (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[14;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40mMode     (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[15;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m---------(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[16;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m  ____   (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[17;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m /\' .\  (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[18;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m/: \___\ (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[19;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m\' / . / (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[20;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m \/___/  (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[21;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[21;23H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[22;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m---------(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[23;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40mRandom   (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[24;13H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40mMode     (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[25;13H(0[0m[39;49m[37m[40mmqqqqqqqqqj(B[39;49m[37m[40m[23;14H(0[0m[39;49m[37m[40m(B[39;49m[37m[40m[12;24H(0[0m[39;49m[37m[40mlqqqqqqqqqk(B[39;49m[37m[40m[13;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40mCurrent  (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[14;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40memotion  (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[15;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m---------(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[16;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m Normal  (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[17;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[17;34H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[18;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40mTime to  (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[19;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40mnext: 10 (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[20;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[20;34H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[21;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m---------(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[22;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40mNext     (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[23;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40memotion: (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[24;24H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m Normal  (0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[25;24H(0[0m[39;49m[37m[40mmqqqqqqqqqj(B[39;49m[37m[40m[A(0[0m[39;49m[37m[40m(B[39;49m[37m[40m[41d (0[0m[39;49m[37m[40mlqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqk(B[39;49m[37m[40m[42;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[42;57H(0[0m[39;49m[37m[40m(B[39;49m[37m[40mMenuTitle[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[43;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m---------------------------------------------------------------------------------------------------------------------(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[44;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[44;56H(0[0m[39;49m[37m[40m(B[0m[30m[47mRandom Mode[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[45;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[45;55H(0[0m[39;49m[37m[40m(B[39;49m[37m[40mKeyboard Mode[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[46;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[46;57H(0[0m[39;49m[37m[40m(B[39;49m[37m[40mTest 3905[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[47;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[47;59H(0[0m[39;49m[37m[40m(B[39;49m[37m[40mExit[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[48;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[49;2H(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[120G(0[0m[39;49m[37m[40mx(B[39;49m[37m[40m[50;2H(0[0m[39;49m[37m[40mmqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq[?7lj[?7h(B[39;49m[37m[40m[47;63H(0[0m[39;49m[37m[40m(B[39;49m[37m[40m[19;31H9 [24d[47;63H[19;31H8[24d[47;63H[19;31H7[24d[47;63H[19;31H6[24d[47;63H[19;31H5[24d[47;63H[19;31H4[24d[47;63H[19;31H3[24d[47;63H[19;31H2[24d[47;63H[19;31H1[24d[47;63H[19;31H0[24d[47;63H[19;31H13[24d[47;63H[19;32H2[24d[47;63H[19;32H1[24d[47;63H[19;32H0[24d[47;63H[19;31H9 [24d[47;63H[19;31H8[24d[47;63H[19;31H7[24d[47;63H[19;31H6[24d[47;63H[19;31H5[24d[47;63H[19;31H4[24d[47;63H[19;31H3[24d[47;63H[19;31H2[24d[47;63H[19;31H1[24d[47;63H[19;31H0[24d[47;63H[19;31H29[24;26H Other[47;63H[19;32H8[24d[47;63H[19;32H7[24d[47;63H[19;32H6[24d[47;63H[19;32H5[24d[47;63H[19;32H4[24d[47;63H[19;32H3[24d[47;63H[19;32H2[24d[47;63H[19;32H1[24d[47;63H[19;32H0[24d[47;63H[19;31H19[24d[47;63H[19;32H8[24d[47;63H[19;32H7[24d[47;63H[19;32H6[24d[47;63H[19;32H5[24d[47;63H[19;32H4[24d[47;63H[19;32H3[24d[47;63H[19;32H2[24d[47;63H[19;32H1[24d[47;63H[19;32H0[24d[47;63H[19;31H9 [24d[47;63H[19;31H8[24d[47;63H[19;31H7[24d[47;63H[19;31H6[24d[47;63H[19;31H5[24d[47;63H[19;31H4[24d[47;63H[19;31H3[24d[47;63H[19;31H2[24d[47;63H[19;31H1[24d[47;63H[19;31H0[24d[47;63H[16;26H Other
+
+
+23[24;26HNormal[47;63H[19;32H2[24d[47;63H[19;32H1[24d[47;63H[19;32H0[24d[47;63H[19;31H19[24d[47;63H[19;32H8[24d[47;63H[19;32H7[24d[47;63H[19;32H6[24d[47;63H[19;32H5[24d[47;63H[19;32H4[24d[47;63H[19;32H3[24d[47;63H[19;32H2[24d[47;63H[19;32H1[24d[47;63H[19;32H0[24d[47;63H[19;31H9 [24d[47;63H[19;31H8[24d[47;63H[19;31H7[24d[47;63H         14396 function calls (14208 primitive calls) in 80.835 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+       37    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap>:1009(_handle_fromlist)
+       34    0.003    0.000    0.003    0.000 <frozen importlib._bootstrap>:103(release)
+       34    0.001    0.000    0.001    0.000 <frozen importlib._bootstrap>:143(__init__)
+       34    0.001    0.000    0.014    0.000 <frozen importlib._bootstrap>:147(__enter__)
+       34    0.001    0.000    0.004    0.000 <frozen importlib._bootstrap>:151(__exit__)
+       34    0.005    0.000    0.009    0.000 <frozen importlib._bootstrap>:157(_get_module_lock)
+       34    0.002    0.000    0.003    0.000 <frozen importlib._bootstrap>:176(cb)
+     46/8    0.001    0.000    0.553    0.069 <frozen importlib._bootstrap>:211(_call_with_frames_removed)
+      358    0.017    0.000    0.017    0.000 <frozen importlib._bootstrap>:222(_verbose_message)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:232(_requires_builtin_wrapper)
+       34    0.001    0.000    0.001    0.000 <frozen importlib._bootstrap>:307(__init__)
+       34    0.001    0.000    0.001    0.000 <frozen importlib._bootstrap>:311(__enter__)
+       34    0.004    0.000    0.007    0.000 <frozen importlib._bootstrap>:318(__exit__)
+      136    0.001    0.000    0.001    0.000 <frozen importlib._bootstrap>:321(<genexpr>)
+       22    0.001    0.000    0.001    0.000 <frozen importlib._bootstrap>:35(_new_module)
+       36    0.001    0.000    0.001    0.000 <frozen importlib._bootstrap>:369(__init__)
+       46    0.001    0.000    0.015    0.000 <frozen importlib._bootstrap>:403(cached)
+       34    0.002    0.000    0.002    0.000 <frozen importlib._bootstrap>:416(parent)
+       34    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:424(has_location)
+       10    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap>:433(spec_from_loader)
+       34    0.005    0.000    0.026    0.001 <frozen importlib._bootstrap>:504(_init_module_attrs)
+       34    0.003    0.000    0.112    0.003 <frozen importlib._bootstrap>:576(module_from_spec)
+       34    0.002    0.000    0.003    0.000 <frozen importlib._bootstrap>:58(__init__)
+     34/8    0.006    0.000    0.623    0.078 <frozen importlib._bootstrap>:663(_load_unlocked)
+       34    0.001    0.000    0.004    0.000 <frozen importlib._bootstrap>:719(find_spec)
+       10    0.001    0.000    0.015    0.002 <frozen importlib._bootstrap>:740(create_module)
+       10    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:748(exec_module)
+       10    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap>:765(is_package)
+       34    0.004    0.000    0.004    0.000 <frozen importlib._bootstrap>:78(acquire)
+       24    0.000    0.000    0.001    0.000 <frozen importlib._bootstrap>:792(find_spec)
+       82    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap>:855(__enter__)
+       82    0.002    0.000    0.002    0.000 <frozen importlib._bootstrap>:859(__exit__)
+       34    0.010    0.000    0.148    0.004 <frozen importlib._bootstrap>:882(_find_spec)
+     34/8    0.003    0.000    0.690    0.086 <frozen importlib._bootstrap>:948(_find_and_load_unlocked)
+     34/8    0.007    0.000    0.697    0.087 <frozen importlib._bootstrap>:978(_find_and_load)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1029(__init__)
+        2    0.000    0.000    0.067    0.033 <frozen importlib._bootstrap_external>:1040(create_module)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1048(exec_module)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:1190(_path_hooks)
+       80    0.003    0.000    0.005    0.000 <frozen importlib._bootstrap_external>:1203(_path_importer_cache)
+        2    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1225(_legacy_get_spec)
+       24    0.009    0.000    0.129    0.005 <frozen importlib._bootstrap_external>:1240(_get_spec)
+       24    0.001    0.000    0.130    0.005 <frozen importlib._bootstrap_external>:1272(find_spec)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1319(__init__)
+        8    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1325(<genexpr>)
+       24    0.002    0.000    0.009    0.000 <frozen importlib._bootstrap_external>:1351(_get_spec)
+       62    0.027    0.000    0.112    0.002 <frozen importlib._bootstrap_external>:1356(find_spec)
+        1    0.000    0.000    0.001    0.001 <frozen importlib._bootstrap_external>:1404(_fill_cache)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:1445(path_hook_for_FileFinder)
+       44    0.010    0.000    0.020    0.000 <frozen importlib._bootstrap_external>:271(cache_from_source)
+       24    0.001    0.000    0.014    0.001 <frozen importlib._bootstrap_external>:369(_get_cached)
+       62    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:40(_relax_case)
+       22    0.001    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:401(_check_name_wrapper)
+       22    0.001    0.000    0.003    0.000 <frozen importlib._bootstrap_external>:438(_classify_pyc)
+       22    0.002    0.000    0.003    0.000 <frozen importlib._bootstrap_external>:471(_validate_timestamp_pyc)
+       66    0.002    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:51(_r_long)
+       22    0.009    0.000    0.053    0.002 <frozen importlib._bootstrap_external>:523(_compile_bytecode)
+      325    0.017    0.000    0.044    0.000 <frozen importlib._bootstrap_external>:56(_path_join)
+       24    0.006    0.000    0.006    0.000 <frozen importlib._bootstrap_external>:574(spec_from_file_location)
+      325    0.017    0.000    0.022    0.000 <frozen importlib._bootstrap_external>:58(<listcomp>)
+       44    0.001    0.000    0.002    0.000 <frozen importlib._bootstrap_external>:62(_path_split)
+       22    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:719(create_module)
+     22/8    0.002    0.000    0.608    0.076 <frozen importlib._bootstrap_external>:722(exec_module)
+      112    0.002    0.000    0.022    0.000 <frozen importlib._bootstrap_external>:74(_path_stat)
+       22    0.006    0.000    0.107    0.005 <frozen importlib._bootstrap_external>:793(get_code)
+       28    0.001    0.000    0.008    0.000 <frozen importlib._bootstrap_external>:84(_path_is_mode_type)
+       22    0.001    0.000    0.001    0.000 <frozen importlib._bootstrap_external>:884(__init__)
+       22    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:909(get_filename)
+       22    0.010    0.000    0.028    0.001 <frozen importlib._bootstrap_external>:914(get_data)
+       27    0.001    0.000    0.008    0.000 <frozen importlib._bootstrap_external>:93(_path_isfile)
+       22    0.001    0.000    0.004    0.000 <frozen importlib._bootstrap_external>:951(path_stats)
+        1    0.000    0.000    0.000    0.000 <frozen importlib._bootstrap_external>:98(_path_isdir)
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+        1    0.001    0.001   80.835   80.835 Bubble_main.py:17(<module>)
+        1   80.134   80.134   80.134   80.134 Bubble_main.py:210(main)
+        1    0.000    0.000    0.038    0.038 TerminalDisplay.py:1(<module>)
+        1    0.001    0.001    0.023    0.023 __init__.py:11(<module>)
+        2    0.003    0.002    0.008    0.004 __init__.py:316(namedtuple)
+       11    0.001    0.000    0.001    0.000 __init__.py:388(<genexpr>)
+        1    0.000    0.000    0.000    0.000 __init__.py:43(normalize_encoding)
+        1    0.000    0.000    0.047    0.047 __init__.py:71(search_function)
+        2    0.000    0.000    0.000    0.000 _collections_abc.py:657(get)
+        1    0.000    0.000    0.000    0.000 _weakrefset.py:36(__init__)
+        2    0.000    0.000    0.000    0.000 _weakrefset.py:81(add)
+        1    0.000    0.000    0.000    0.000 abc.py:1(<module>)
+        8    0.001    0.000    0.004    0.001 abc.py:125(__new__)
+        4    0.000    0.000    0.000    0.000 abc.py:7(abstractmethod)
+        1    0.000    0.000    0.002    0.002 bisect.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 codecs.py:94(__new__)
+        1    0.000    0.000    0.067    0.067 config.py:2(<module>)
+        1    0.000    0.000    0.000    0.000 determineNewPosition.py:6(<module>)
+        4    0.000    0.000    0.002    0.000 enum.py:125(__prepare__)
+        4    0.020    0.005    0.047    0.012 enum.py:135(__new__)
+        4    0.000    0.000    0.000    0.000 enum.py:152(<dictcomp>)
+        4    0.005    0.001    0.008    0.002 enum.py:177(<setcomp>)
+       60    0.002    0.000    0.003    0.000 enum.py:18(_is_descriptor)
+       12    0.000    0.000    0.000    0.000 enum.py:198(<genexpr>)
+       68    0.002    0.000    0.002    0.000 enum.py:26(_is_dunder)
+       18    0.001    0.000    0.070    0.004 enum.py:284(__call__)
+        4    0.000    0.000    0.000    0.000 enum.py:335(__getattr__)
+       68    0.002    0.000    0.002    0.000 enum.py:34(_is_sunder)
+        4    0.000    0.000    0.000    0.000 enum.py:360(__members__)
+       88    0.008    0.000    0.010    0.000 enum.py:376(__setattr__)
+        4    0.003    0.001    0.068    0.017 enum.py:389(_create_)
+       12    0.001    0.000    0.002    0.000 enum.py:442(_get_mixins_)
+       12    0.001    0.000    0.001    0.000 enum.py:453(_find_data_type)
+        4    0.001    0.000    0.001    0.000 enum.py:474(_find_new_)
+       14    0.000    0.000    0.000    0.000 enum.py:526(__new__)
+        2    0.000    0.000    0.000    0.000 enum.py:628(value)
+        4    0.001    0.000    0.129    0.032 enum.py:633(_convert)
+        4    0.000    0.000    0.000    0.000 enum.py:64(__init__)
+        4    0.014    0.004    0.057    0.014 enum.py:654(<listcomp>)
+       60    0.000    0.000    0.000    0.000 enum.py:659(<lambda>)
+       68    0.008    0.000    0.016    0.000 enum.py:70(__setitem__)
+        3    0.000    0.000    0.001    0.000 enum.py:836(__and__)
+       14    0.001    0.000    0.009    0.001 hashlib.py:116(__get_openssl_constructor)
+        1    0.001    0.001    0.069    0.069 hashlib.py:54(<module>)
+        8    0.000    0.000    0.007    0.001 hashlib.py:73(__get_builtin_constructor)
+        1    0.000    0.000    0.000    0.000 idna.py:146(Codec)
+        2    0.000    0.000    0.000    0.000 idna.py:147(encode)
+        1    0.000    0.000    0.000    0.000 idna.py:218(IncrementalEncoder)
+        1    0.000    0.000    0.000    0.000 idna.py:253(IncrementalDecoder)
+        1    0.000    0.000    0.000    0.000 idna.py:292(StreamWriter)
+        1    0.000    0.000    0.000    0.000 idna.py:295(StreamReader)
+        1    0.000    0.000    0.038    0.038 idna.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 idna.py:300(getregentry)
+        1    0.000    0.000    0.066    0.066 linecache.py:6(<module>)
+        1    0.000    0.000    0.000    0.000 moveServos.py:3(<module>)
+        1    0.000    0.000    0.000    0.000 omitMaxValue.py:4(<module>)
+        1    0.000    0.000    0.002    0.002 os.py:40(_get_exports_list)
+        1    0.001    0.001    0.001    0.001 os.py:44(<listcomp>)
+        2    0.000    0.000    0.000    0.000 os.py:673(__getitem__)
+        2    0.000    0.000    0.000    0.000 os.py:751(encode)
+        2    0.000    0.000    0.000    0.000 os.py:769(getenv)
+        1    0.000    0.000    0.000    0.000 pigpio.py:1056(_event_ADT)
+        1    0.000    0.000    0.000    0.000 pigpio.py:1072(_callback_ADT)
+        1    0.000    0.000    0.000    0.000 pigpio.py:1088(_callback_thread)
+        1    0.000    0.000    0.010    0.010 pigpio.py:1090(__init__)
+        1    0.000    0.000    0.000    0.000 pigpio.py:1197(_callback)
+        1    0.000    0.000    0.000    0.000 pigpio.py:1240(_event)
+        1    0.000    0.000    0.000    0.000 pigpio.py:1286(_wait_for_edge)
+        1    0.000    0.000    0.000    0.000 pigpio.py:1304(_wait_for_event)
+        1    0.001    0.001    0.001    0.001 pigpio.py:1322(pi)
+        3    0.000    0.000    0.003    0.001 pigpio.py:1621(set_servo_pulsewidth)
+        1    0.002    0.002    0.346    0.346 pigpio.py:293(<module>)
+        1    0.000    0.000    0.067    0.067 pigpio.py:5019(__init__)
+        1    0.000    0.000    0.000    0.000 pigpio.py:866(_socklock)
+        2    0.000    0.000    0.000    0.000 pigpio.py:870(__init__)
+        1    0.000    0.000    0.000    0.000 pigpio.py:874(error)
+        1    0.000    0.000    0.000    0.000 pigpio.py:881(pulse)
+        4    0.000    0.000    0.000    0.000 pigpio.py:950(u2i)
+        4    0.000    0.000    0.000    0.000 pigpio.py:970(_u2i)
+        5    0.001    0.000    0.005    0.001 pigpio.py:982(_pigpio_command)
+        1    0.000    0.000    0.000    0.000 printFunctions.py:2(<module>)
+        1    0.001    0.001    0.101    0.101 random.py:38(<module>)
+        1    0.000    0.000    0.000    0.000 random.py:669(SystemRandom)
+        1    0.000    0.000    0.000    0.000 random.py:72(Random)
+        1    0.000    0.000    0.001    0.001 random.py:88(__init__)
+        1    0.000    0.000    0.001    0.001 random.py:97(seed)
+        3    0.000    0.000    0.043    0.014 re.py:232(compile)
+        3    0.001    0.000    0.043    0.014 re.py:271(_compile)
+        1    0.000    0.000    0.000    0.000 selectors.py:206(_BaseSelectorImpl)
+        1    0.000    0.000    0.000    0.000 selectors.py:290(SelectSelector)
+        1    0.000    0.000    0.000    0.000 selectors.py:341(_PollLikeSelector)
+        1    0.000    0.000    0.000    0.000 selectors.py:433(PollSelector)
+        1    0.000    0.000    0.000    0.000 selectors.py:442(EpollSelector)
+        1    0.001    0.001    0.028    0.028 selectors.py:5(<module>)
+        1    0.000    0.000    0.000    0.000 selectors.py:60(_SelectorMapping)
+        1    0.000    0.000    0.000    0.000 selectors.py:80(BaseSelector)
+        1    0.000    0.000    0.000    0.000 socket.py:130(_GiveupOnSendfile)
+        1    0.000    0.000    0.000    0.000 socket.py:133(socket)
+        2    0.001    0.000    0.001    0.000 socket.py:139(__init__)
+        1    0.004    0.004    0.183    0.183 socket.py:47(<module>)
+        1    0.000    0.000    0.000    0.000 socket.py:546(SocketIO)
+        2    0.000    0.000    0.060    0.030 socket.py:691(create_connection)
+        2    0.000    0.000    0.056    0.028 socket.py:731(getaddrinfo)
+      363    0.006    0.000    0.011    0.000 socket.py:76(<lambda>)
+      364    0.005    0.000    0.010    0.000 socket.py:81(<lambda>)
+      365    0.005    0.000    0.011    0.000 socket.py:86(<lambda>)
+      366    0.006    0.000    0.011    0.000 socket.py:91(<lambda>)
+        8    0.000    0.000    0.001    0.000 socket.py:97(_intenum_converter)
+        8    0.000    0.000    0.000    0.000 sre_compile.py:249(_compile_charset)
+        8    0.014    0.002    0.019    0.002 sre_compile.py:276(_optimize_charset)
+        5    0.001    0.000    0.003    0.001 sre_compile.py:411(_mk_bitmap)
+        5    0.002    0.000    0.002    0.000 sre_compile.py:413(<listcomp>)
+        2    0.000    0.000    0.000    0.000 sre_compile.py:416(_bytes_to_codes)
+        5    0.000    0.000    0.000    0.000 sre_compile.py:423(_simple)
+        4    0.000    0.000    0.000    0.000 sre_compile.py:453(_get_iscased)
+        2    0.000    0.000    0.000    0.000 sre_compile.py:461(_get_literal_prefix)
+        2    0.000    0.000    0.000    0.000 sre_compile.py:492(_get_charset_prefix)
+        3    0.001    0.000    0.011    0.004 sre_compile.py:536(_compile_info)
+        6    0.000    0.000    0.000    0.000 sre_compile.py:595(isstring)
+        3    0.000    0.000    0.026    0.009 sre_compile.py:598(_code)
+        1    0.000    0.000    0.000    0.000 sre_compile.py:65(_combine_flags)
+     11/3    0.002    0.000    0.015    0.005 sre_compile.py:71(_compile)
+        3    0.001    0.000    0.041    0.014 sre_compile.py:759(compile)
+       12    0.000    0.000    0.000    0.000 sre_parse.py:111(__init__)
+       26    0.000    0.000    0.000    0.000 [19;31H6[24dsre_parse.py:160(__len__)
+       67    0.001    0.000    0.002    0.000 sre_parse.py:164(__getitem__)
+        6    0.000    0.000    0.000    0.000 sre_parse.py:168(__setitem__)
+       21    0.000    0.000    0.001    0.000 sre_parse.py:172(append)
+     12/4    0.001    0.000    0.002    0.000 sre_parse.py:174(getwidth)
+        3    0.000    0.000    0.000    0.000 sre_parse.py:224(__init__)
+       61    0.002    0.000    0.002    0.000 sre_parse.py:233(__next)
+       42    0.001    0.000    0.001    0.000 sre_parse.py:249(match)
+       53    0.001    0.000    0.002    0.000 sre_parse.py:254(get)
+       19    0.000    0.000    0.000    0.000 sre_parse.py:286(tell)
+        8    0.000    0.000    0.000    0.000 sre_parse.py:295(_class_escape)
+        7    0.000    0.000    0.000    0.000 sre_parse.py:408(_uniq)
+      5/3    0.001    0.000    0.013    0.004 sre_parse.py:417(_parse_sub)
+      6/3    0.004    0.001    0.012    0.004 sre_parse.py:475(_parse)
+        3    0.000    0.000    0.000    0.000 sre_parse.py:76(__init__)
+        8    0.000    0.000    0.000    0.000 sre_parse.py:81(groups)
+        1    0.000    0.000    0.000    0.000 sre_parse.py:84(opengroup)
+        3    0.000    0.000    0.000    0.000 sre_parse.py:903(fix_flags)
+        3    0.001    0.000    0.015    0.005 sre_parse.py:919(parse)
+        1    0.000    0.000    0.000    0.000 sre_parse.py:96(closegroup)
+        1    0.003    0.003    0.005    0.005 stringprep.py:6(<module>)
+        1    0.000    0.000    0.003    0.003 struct.py:3(<module>)
+        1    0.002    0.002    0.114    0.114 threading.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 threading.py:1104(daemon)
+        1    0.000    0.000    0.000    0.000 threading.py:1120(daemon)
+        1    0.000    0.000    0.000    0.000 threading.py:1142(Timer)
+        1    0.000    0.000    0.000    0.000 threading.py:1172(_MainThread)
+        1    0.001    0.001    0.002    0.002 threading.py:1174(__init__)
+        1    0.000    0.000    0.000    0.000 threading.py:1191(_DummyThread)
+        1    0.000    0.000    0.000    0.000 threading.py:1214(current_thread)
+        1    0.000    0.000    0.000    0.000 threading.py:204(Condition)
+        2    0.000    0.000    0.000    0.000 threading.py:216(__init__)
+        2    0.000    0.000    0.000    0.000 threading.py:240(__enter__)
+        2    0.000    0.000    0.000    0.000 threading.py:243(__exit__)
+        1    0.000    0.000    0.000    0.000 threading.py:249(_release_save)
+        1    0.000    0.000    0.000    0.000 threading.py:252(_acquire_restore)
+        2    0.000    0.000    0.000    0.000 threading.py:255(_is_owned)
+        1    0.000    0.000    0.001    0.001 threading.py:264(wait)
+        1    0.000    0.000    0.000    0.000 threading.py:335(notify)
+        1    0.000    0.000    0.000    0.000 threading.py:358(notify_all)
+        1    0.000    0.000    0.000    0.000 threading.py:370(Semaphore)
+        1    0.000    0.000    0.000    0.000 threading.py:450(BoundedSemaphore)
+        1    0.000    0.000    0.000    0.000 threading.py:488(Event)
+        2    0.000    0.000    0.001    0.000 threading.py:499(__init__)
+        2    0.000    0.000    0.000    0.000 threading.py:507(is_set)
+        1    0.000    0.000    0.001    0.001 threading.py:513(set)
+        1    0.000    0.000    0.002    0.002 threading.py:534(wait)
+        1    0.000    0.000    0.000    0.000 threading.py:567(Barrier)
+        1    0.000    0.000    0.000    0.000 threading.py:721(BrokenBarrierError)
+        1    0.001    0.001    0.001    0.001 threading.py:728(_newname)
+        1    0.000    0.000    0.000    0.000 threading.py:739(Thread)
+        2    0.001    0.000    0.003    0.001 threading.py:758(__init__)
+        1    0.000    0.000    0.003    0.003 threading.py:829(start)
+        1    0.000    0.000    0.000    0.000 threading.py:88(_RLock)
+        1    0.000    0.000    0.000    0.000 threading.py:891(_set_ident)
+        1    0.000    0.000    0.000    0.000 threading.py:894(_set_tstate_lock)
+        1    0.001    0.001    0.003    0.003 token.py:1(<module>)
+        1    0.001    0.001    0.002    0.002 token.py:78(<dictcomp>)
+       20    0.000    0.000    0.001    0.000 tokenize.py:107(group)
+        1    0.000    0.000    0.000    0.000 tokenize.py:108(any)
+        2    0.000    0.000    0.000    0.000 tokenize.py:109(maybe)
+        3    0.003    0.001    0.004    0.001 tokenize.py:132(_all_string_prefixes)
+       24    0.001    0.000    0.001    0.000 tokenize.py:143(<listcomp>)
+        1    0.006    0.006    0.053    0.053 tokenize.py:21(<module>)
+        1    0.000    0.000    0.000    0.000 tokenize.py:212(TokenError)
+        1    0.000    0.000    0.000    0.000 tokenize.py:214(StopTokenizing)
+        1    0.000    0.000    0.000    0.000 tokenize.py:217(Untokenizer)
+        1    0.000    0.000    0.000    0.000 tokenize.py:94(TokenInfo)
+        1    0.000    0.000    0.092    0.092 traceback.py:1(<module>)
+        1    0.000    0.000    0.000    0.000 traceback.py:227(FrameSummary)
+        1    0.014    0.014    0.014    0.014 traceback.py:315(StackSummary)
+        1    0.000    0.000    0.000    0.000 traceback.py:437(TracebackException)
+        2    0.000    0.000    0.000    0.000 types.py:164(__get__)
+       73    0.005    0.000    0.005    0.000 {built-in method __new__ of type object at 0x3cc514}
+        8    0.001    0.000    0.001    0.000 {built-in method _abc._abc_init}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_md5}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha1}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha224}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha256}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha384}
+        1    0.000    0.000    0.000    0.000 {built-in method _hashlib.openssl_sha512}
+       22    0.000    0.000    0.000    0.000 {built-in method _imp._fix_co_filename}
+      150    0.001    0.000    0.001    0.000 {built-in method _imp.acquire_lock}
+       10    0.014    0.001    0.014    0.001 {built-in method _imp.create_builtin}
+        2    0.066    0.033    0.066    0.033 {built-in method _imp.create_dynamic}
+       10    0.000    0.000    0.000    0.000 {built-in method _imp.exec_builtin}
+        2    0.000    0.000    0.000    0.000 {built-in method _imp.exec_dynamic}
+       32    0.001    0.000    0.001    0.000 {built-in method _imp.is_builtin}
+       24    0.000    0.000    0.000    0.000 {built-in method _imp.is_frozen}
+      150    0.001    0.000    0.001    0.000 {built-in method _imp.release_lock}
+        2    0.008    0.004    0.055    0.028 {built-in method _socket.getaddrinfo}
+        3    0.000    0.000    0.000    0.000 {built-in method _sre.compile}
+        5    0.000    0.000    0.000    0.000 {built-in method _struct.pack}
+        5    0.000    0.000    0.000    0.000 {built-in method _struct.unpack}
+        1    0.000    0.000    0.000    0.000 {built-in method _thread._set_sentinel}
+       74    0.001    0.000    0.001    0.000 {built-in method _thread.allocate_lock}
+       70    0.000    0.000    0.000    0.000 {built-in method _thread.get_ident}
+        2    0.001    0.000    0.001    0.000 {built-in method _thread.start_new_thread}
+        1    0.000    0.000    0.000    0.000 {built-in method atexit.register}
+       46    0.016    0.000    0.038    0.001 {built-in method builtins.__build_class__}
+        1    0.000    0.000    0.046    0.046 {built-in method builtins.__import__}
+       38    0.001    0.000    0.002    0.000 {built-in method builtins.any}
+        1    0.001    0.001    0.001    0.001 {built-in method builtins.dir}
+     25/1    0.003    0.000   80.835   80.835 {built-in method builtins.exec}
+      263    0.005    0.000    0.006    0.000 {built-in method builtins.getattr}
+       17    0.000    0.000    0.000    0.000 {built-in method builtins.globals}
+      441    0.007    0.000    0.007    0.000 {built-in method builtins.hasattr}
+     1001    0.007    0.000    0.007    0.000 {built-in method builtins.isinstance}[47;63H
+       36    0.000    0.000    0.000    0.000 {built-in method builtins.issubclass}
+  383/370    0.002    0.000    0.002    0.000 {built-in method builtins.len}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.max}
+       26    0.001    0.000    0.001    0.000 {built-in method builtins.min}
+       19    0.000    0.000    0.000    0.000 {built-in method builtins.ord}
+        2    0.000    0.000    0.000    0.000 {built-in method builtins.repr}
+       66    0.001    0.000    0.009    0.000 {built-in method builtins.setattr}
+        4    0.000    0.000    0.000    0.000 {built-in method builtins.vars}
+       66    0.001    0.000    0.001    0.000 {built-in method from_bytes}
+       22    0.043    0.002    0.043    0.002 {built-in method marshal.loads}
+        1    0.000    0.000    0.000    0.000 {built-in method math.exp}
+        2    0.000    0.000    0.000    0.000 {built-in method math.log}
+        1    0.000    0.000    0.000    0.000 {built-in method math.sqrt}
+       68    0.001    0.000    0.001    0.000 {built-in method posix.fspath}
+       22    0.002    0.000    0.002    0.000 {built-in method posix.getcwd}
+        1    0.000    0.000    0.000    0.000 {built-in method posix.listdir}
+        2    0.000    0.000    0.000    0.000 {built-in method posix.register_at_fork}
+      112    0.021    0.000    0.021    0.000 {built-in method posix.stat}
+        2    0.000    0.000    0.000    0.000 {built-in method sys._getframe}
+        2    0.000    0.000    0.000    0.000 {built-in method sys.intern}
+        1    0.000    0.000    0.000    0.000 {function Random.seed at 0xb6486390}
+       11    0.000    0.000    0.000    0.000 {method '__contains__' of 'frozenset' objects}
+        2    0.000    0.000    0.000    0.000 {method '__enter__' of '_thread.lock' objects}
+        2    0.000    0.000    0.000    0.000 {method '__exit__' of '_thread.lock' objects}
+        6    0.001    0.000    0.001    0.000 {method 'acquire' of '_thread.lock' objects}
+      183    0.002    0.000    0.002    0.000 {method 'add' of 'set' objects}
+        1    0.000    0.000    0.000    0.000 {method 'append' of 'collections.deque' objects}
+      378    0.002    0.000    0.002    0.000 {method 'append' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 {method 'cast' of 'memoryview' objects}
+        2    0.002    0.001    0.002    0.001 {method 'connect' of '_socket.socket' objects}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+        4    0.000    0.000    0.000    0.000 {method 'encode' of 'str' objects}
+       26    0.001    0.000    0.001    0.000 {method 'endswith' of 'str' objects}
+       14    0.000    0.000    0.000    0.000 {method 'extend' of 'list' objects}
+       38    0.002    0.000    0.002    0.000 {method 'find' of 'bytearray' objects}
+        2    0.000    0.000    0.000    0.000 {method 'find_loader' of 'zipimport.zipimporter' objects}
+       96    0.001    0.000    0.001    0.000 {method 'get' of 'dict' objects}
+       88    0.002    0.000    0.002    0.000 {method 'get' of 'mappingproxy' objects}
+        4    0.000    0.000    0.000    0.000 {method 'isalnum' of 'str' objects}
+       11    0.000    0.000    0.000    0.000 {method 'isidentifier' of 'str' objects}
+     1458    0.011    0.000    0.011    0.000 {method 'isupper' of 'str' objects}
+       60    0.000    0.000    0.000    0.000 {method 'items' of 'collections.OrderedDict' objects}
+        4    0.000    0.000    0.000    0.000 {method 'items' of 'dict' objects}
+       22    0.000    0.000    0.000    0.000 {method 'items' of 'mappingproxy' objects}
+      464    0.006    0.000    0.006    0.000 {method 'join' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 {method 'keys' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'lower' of 'str' objects}
+        4    0.000    0.000    0.000    0.000 {method 'mro' of 'type' objects}
+        8    0.000    0.000    0.000    0.000 {method 'pop' of 'dict' objects}
+       22    0.019    0.001    0.019    0.001 {method 'read' of '_io.FileIO' objects}
+        5    0.000    0.000    0.000    0.000 {method 'recv' of '_socket.socket' objects}
+        1    0.000    0.000    0.000    0.000 {method 'release' of '_thread.lock' objects}
+        4    0.000    0.000    0.000    0.000 {method 'replace' of 'str' objects}
+      219    0.002    0.000    0.002    0.000 {method 'rpartition' of 'str' objects}
+      694    0.006    0.000    0.006    0.000 {method 'rstrip' of 'str' objects}
+        5    0.004    0.001    0.004    0.001 {method 'send' of '_socket.socket' objects}
+        4    0.000    0.000    0.000    0.000 {method 'setdefault' of 'dict' objects}
+        1    0.000    0.000    0.000    0.000 {method 'setsockopt' of '_socket.socket' objects}
+        2    0.000    0.000    0.000    0.000 {method 'setter' of 'property' objects}
+        2    0.000    0.000    0.000    0.000 {method 'settimeout' of '_socket.socket' objects}
+        4    0.001    0.000    0.001    0.000 {method 'sort' of 'list' objects}
+        2    0.000    0.000    0.000    0.000 {method 'split' of 'bytes' objects}
+        1    0.000    0.000    0.000    0.000 {method 'split' of 'str' objects}
+     1320    0.010    0.000    0.010    0.000 {method 'startswith' of 'str' objects}
+        2    0.000    0.000    0.000    0.000 {method 'tolist' of 'memoryview' objects}
+        5    0.000    0.000    0.000    0.000 {method 'translate' of 'bytearray' objects}
+        1    0.000    0.000    0.000    0.000 {method 'union' of 'set' objects}
+        4    0.000    0.000    0.000    0.000 {method 'update' of 'dict' objects}
+       36    0.000    0.000    0.000    0.000 {method 'upper' of 'str' objects}
+        1    0.000    0.000    0.000    0.000 {method 'values' of 'dict' objects}
+
+

@@ -9,6 +9,14 @@ pitchServo = 15   #Servo voor schuinkijken
 rollServo = 18    #Servo voor hoofddraaien
 
 currentHeadPosition = [1,1,1]
+programRunning = True
+programMode = 'Random'
+keyPressed = 'none'
+
+currentEmotion = 'Normal'
+nextEmotion = 'Normal'
+Emotions = ['Normal','Other']
+timetoNextEmotion = 10
 
 # Initial values for the variables
 middle = 1500
@@ -23,3 +31,10 @@ pitchSteps = 100
 rollSteps = 100
 
 sleepTime = 0.04
+
+yawMin = 500
+yawMax = 2500
+pitchMin = 1300
+pitchMax = 1750
+rollMin = 1350
+rollMax = 1850

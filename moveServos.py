@@ -4,7 +4,6 @@ import config
 from time import sleep
 
 def moveTotalSteps():
-
     # Subdivide the steps to set the steps/time for the servos
     yawDivided = int(float(config.yawSteps)/config.totalSteps)
     pitchDivided = int(float(config.pitchSteps)/config.totalSteps)
@@ -38,7 +37,7 @@ def moveTotalSteps():
     yawStartExtraStep = config.totalSteps - yawRest
     pitchStartExtraStep = config.totalSteps - pitchRest
     rollStartExtraStep = config.totalSteps - rollRest
-    
+
     #print(yawDivided, pitchDivided, rollDivided)
 
     # Run the servo sequence
@@ -60,14 +59,10 @@ def moveTotalSteps():
         else:
             config.rollPosition = config.rollPosition + rollDivided + rollExtraStep
 
-        # Set the servos to the right step each time, but leave them off if they don't have steps
-        if yawDivided and yawRest:
-            config.pi.set_servo_pulsewidth(config.yawServo, config.yawPosition)
+        # Set the servos to the right step each time
+        config.pi.set_servo_pulsewidth(config.yawServo, config.yawPosition)
+        config.pi.set_servo_pulsewidth(config.pitchServo, config.pitchPosition)
+        config.pi.set_servo_pulsewidth(config.rollServo, config.rollPosition)
 
-        if pitchDivided and pitchRest:
-            config.pi.set_servo_pulsewidth(config.pitchServo, config.pitchPosition)
-
-        if rollDivided and rollRest:
-            config.pi.set_servo_pulsewidth(config.rollServo, config.rollPosition)
 
         sleep(config.sleepTime)

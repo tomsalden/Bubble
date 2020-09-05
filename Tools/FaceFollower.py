@@ -17,7 +17,7 @@ eye_cascade = cv2.CascadeClassifier('/home/pi/opencv-4.4.0/data/haarcascades/haa
 
 pi = pigpio.pi()
 yawServo = 27     #Servo op z'n hoofd
-pitchServo = 14   #Servo voor schuinkijken
+pitchServo = 21   #Servo voor schuinkijken
 rollServo = 22    #Servo voor hoofddraaien
 
 midden = 1500
@@ -84,8 +84,8 @@ cap = VideoCapture(0)
 
 while True:
     time.sleep(1)   # simulate time between events
-    frame = cap.read()
-    img = cv2.flip(frame, -1)
+    img = cap.read()
+    #img = cv2.flip(frame, -1)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     #First check for faces
     faces = face_cascade.detectMultiScale(gray, 1.05, 5)
