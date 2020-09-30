@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/usr/local/lib/python3.7/site-packages/cv2/python-3.7')
+sys.path.append('home/pi/local/lib/python3.7/site-packages/cv2/python-3.7')
 sys.path.append("..")
 
 import cv2, queue, threading, time, os
