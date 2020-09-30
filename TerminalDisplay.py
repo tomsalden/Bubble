@@ -2,7 +2,81 @@ import curses
 import time
 import config
 import random
+import img2ascii
 
+import sys
+import numpy as np
+
+sys.path.append('home/pi/local/lib/python3.7/site-packages/cv2/python-3.7')
+import cv2, queue, threading
+
+# Create daemon for picamera, so no frames are missed when one is asked
+class VideoCapture:
+  def __init__(self, name):
+    self.cap = cv2.VideoCapture(name)
+    self.cap.set(3,160) # set Width
+    self.cap.set(4,120) # set Height
+    self.q = queue.Queue()
+    t = threading.Thread(target=self._reader)
+    t.daemon = True
+    t.start()
+
+  # read frames as soon as they are available, keeping only most recent one
+  def _reader(self):
+    while True:
+      ret, frame = self.cap.read()
+      if not ret:
+        break
+      if not self.q.empty():
+        try:
+          self.q.get_nowait()   # discard previous (unprocessed) frame
+        except queue.Empty:
+          pass
+      self.q.put(frame)
+
+  def read(self):
+    return self.q.get()
+
+class faceDetection:
+    def __init__(self, cameraObject):
+        self.cameraObect = cameraObject
+        self.face_cascade = cv2.CascadeClassifier('/home/pi/opencv-4.4.0/data/haarcascades/haarcascade_frontalface_alt.xml')
+        self.profile_cascade = cv2.CascadeClassifier('/home/pi/opencv-4.4.0/data/haarcascades/haarcascade_profileface.xml')
+        self.eye_cascade = cv2.CascadeClassifier('/home/pi/opencv-4.4.0/data/haarcascades/haarcascade_eye.xml')
+
+        self.detected = 0
+
+        t = threading.Thread(target=self._detector)
+        t.daemon = True
+        t.start()
+
+    def _detector(self):
+        while True:
+            img = self.cameraObect.read()
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+            self.faces = self.face_cascade.detectMultiScale(gray, 1.05, 5)
+            if len(self.faces):
+                self.detected = 1
+            else:
+                self.eyes = self.eye_cascade.detectMultiScale(gray, 1.05, 5)
+                if len(self.faces):
+                    self.detected = 1
+                else:
+                    profiles = self.profile_cascade.detectMultiScale(gray, 1.05, 5)
+                    if len(self.faces):
+                        self.detected = 1
+                    else:
+                        self.detected = 0
+
+            time.sleep(1)
+
+    def detect(self):
+        return 'JA'
+
+
+
+# Create the terminal boxes
 def arrowPlotter(arrowBox,headPositions):
     truncatedHeadPosition = [0,0]
     truncatedHeadPosition[0] = headPositions[0]
@@ -129,6 +203,29 @@ def menuPrinter(menuWindow,menuItems,menuHeader,selectedRow):
     menuWindow.box()
     menuWindow.refresh()
 
+def imgPlotter(imgbox,ascii):
+    imgbox.clrtobot()
+    imgbox.addstr(1,1,"Webcam view:\n\n")
+    for i in ascii:
+        imgbox.addstr(i)
+        imgbox.addstr("\n")
+
+    imgbox.box()
+    imgbox.refresh()
+
+def activateImage(imgPlotterBox):
+    if (config.cameraEnabled == False):
+        config.cap = VideoCapture(0)
+        config.cameraEnabled = True
+    config.imageShow = not config.imageShow
+    imgPlotterBox.addstr(1,1,"\n")
+    imgPlotterBox.clrtobot()
+    imgPlotterBox.addstr(6,42//2-1,"No\n")
+    imgPlotterBox.addstr(7,42//2-3,"Image\n")
+    imgPlotterBox.addstr(9,42//2-23//2,"Activate camera in menu")
+    imgPlotterBox.box()
+    imgPlotterBox.refresh()
+
 def TerminalWrapped():
     localProgramMode = 'Random'
     stdscr = curses.initscr()
@@ -142,7 +239,19 @@ def TerminalWrapped():
     curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_WHITE)
     screenHeight, screenWidth = stdscr.getmaxyx()
 
+    #Picam settings:
+    cameraEnabled = False
+    imageShow = False
+    width = 40
+    height = 30
+    dim = (width, height)
+    scale = 0.43
+    cols = 40
+
+
     stdscr.refresh()
+
+
 
     #Title Box
     titleBox = curses.newwin(10, screenWidth-1, 1, 1)
@@ -168,10 +277,19 @@ def TerminalWrapped():
 
     #Menu Box
     menuBox = curses.newwin(10,screenWidth-1,screenHeight-10,1)
-    menu = ['Random Mode', 'Keyboard Mode', 'Test 3905', 'Exit']
+    menu = ['Random Mode', 'Keyboard Mode', 'Camera on/off', 'Face detection on/off', 'Exit']
     menuBox.box()
     menuPosition = 0
     menuPrinter(menuBox,menu,'MenuTitle',menuPosition)
+
+    #Image Plotter
+    imgPlotterBox = curses.newwin(16,42,11,38)
+    imgPlotterBox.addstr(6,42//2-1,"No\n")
+    imgPlotterBox.addstr(7,42//2-3,"Image\n")
+    imgPlotterBox.addstr(9,42//2-23//2,"Activate camera in menu")
+    imgPlotterBox.box()
+    imgPlotterBox.refresh()
+
 
 
     previousEmotionTime = config.timetoNextEmotion
@@ -183,24 +301,43 @@ def TerminalWrapped():
     localRoll = config.rollPosition
 
     while (config.programRunning):
-        #Arrow in Box1 (topleft)
+
+        #Replot arrowBox when position has changed
         if(previousHeadPosition != config.currentHeadPosition):
             arrowPlotter(arrowBox,config.currentHeadPosition)
             previousHeadPosition = config.currentHeadPosition
 
+        #Replot servoBox when position has changed
         if(localYaw != config.yawPosition or localPitch != config.pitchPosition or localRoll != config.rollPosition):
             servoBoxPlotter(servoBox)
             localYaw = config.yawPosition
             localPitch = config.pitchPosition
             localRoll = config.rollPosition
 
-        if(time.time() - localTime >= 1 and config.programMode == 'Random'):
-            config.timetoNextEmotion = config.timetoNextEmotion -1
-            if (config.timetoNextEmotion == -1):
-                config.timetoNextEmotion = random.randint(10,30)
-                config.currentEmotion = config.nextEmotion
-                config.nextEmotion = random.choice(config.Emotions)
-            currentEmotionPlotter(currentEmotion,config.currentEmotion, config.nextEmotion, config.timetoNextEmotion)
+        #Replot currentEmotion every second and camera if it is enabled
+        if(time.time() - localTime >= 1):
+
+            if (config.imageShow == True):
+                img = config.cap.read()
+                gray = gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                rescaledGray = cv2.resize(gray,dim)
+
+                ascii = img2ascii.covertImageToAscii(rescaledGray, cols, scale, False)
+
+                imgPlotter(imgPlotterBox, ascii)
+
+            if (config.detection == True):
+                imgPlotterBox.addstr(1,20,DetectorOfFaces.detect())
+
+
+
+            if (config.programMode == 'Random'):
+                config.timetoNextEmotion = config.timetoNextEmotion -1
+                if (config.timetoNextEmotion == -1):
+                    config.timetoNextEmotion = random.randint(10,30)
+                    config.currentEmotion = config.nextEmotion
+                    config.nextEmotion = random.choice(config.Emotions)
+                currentEmotionPlotter(currentEmotion,config.currentEmotion, config.nextEmotion, config.timetoNextEmotion)
             localTime = time.time()
 
         key = stdscr.getch()
@@ -227,6 +364,12 @@ def TerminalWrapped():
             elif (menu[menuPosition] == 'Random Mode'):
                 config.programMode = 'Random'
                 localProgramMode = 'Random'
+            elif (menu[menuPosition] == 'Camera on/off'):
+                activateImage(imgPlotterBox)
+            elif (menu[menuPosition] == 'Face detection on/off'):
+                config.detection = True
+                DetectorOfFaces = faceDetection(config.cap)
+
 
             currentModePlotter(currentMode,localProgramMode)
 
@@ -246,6 +389,8 @@ def TerminalWrapped():
             config.keyPressed = 'C'
         elif (key == 111 and localProgramMode == 'Keyboard'): #O key pressed, disengage servos
             config.keyPressed = 'O'
+        elif (key == 105): #I key pressed, toggle webcam VideoCapture
+            activateImage(imgPlotterBox)
         else:
             config.keyPressed = 'None'
 

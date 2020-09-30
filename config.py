@@ -38,3 +38,9 @@ pitchMin = 1300
 pitchMax = 1750
 rollMin = 1350
 rollMax = 1850
+
+cameraEnabled = False
+imageShow = False
+cap = 0
+
+detection = False
