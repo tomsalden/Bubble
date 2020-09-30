@@ -45,6 +45,7 @@ class faceDetection:
         self.eye_cascade = cv2.CascadeClassifier('/home/pi/opencv-4.4.0/data/haarcascades/haarcascade_eye.xml')
 
         self.detected = 0
+        self.faces = 0
 
         t = threading.Thread(target=self._detector)
         t.daemon = True
@@ -57,22 +58,22 @@ class faceDetection:
 
             self.faces = self.face_cascade.detectMultiScale(gray, 1.05, 5)
             if len(self.faces):
-                self.detected = 1
+                self.detected = True
             else:
                 self.eyes = self.eye_cascade.detectMultiScale(gray, 1.05, 5)
                 if len(self.faces):
-                    self.detected = 1
+                    self.detected = True
                 else:
                     profiles = self.profile_cascade.detectMultiScale(gray, 1.05, 5)
                     if len(self.faces):
-                        self.detected = 1
+                        self.detected = True
                     else:
-                        self.detected = 0
+                        self.detected = False
 
             time.sleep(1)
 
     def detect(self):
-        return 'JA'
+        return self.detected, self.faces
 
 
 
@@ -215,7 +216,7 @@ def imgPlotter(imgbox,ascii):
 
 def activateImage(imgPlotterBox):
     if (config.cameraEnabled == False):
-        config.cap = VideoCapture(0)
+
         config.cameraEnabled = True
     config.imageShow = not config.imageShow
     imgPlotterBox.addstr(1,1,"\n")
@@ -247,6 +248,7 @@ def TerminalWrapped():
     dim = (width, height)
     scale = 0.43
     cols = 40
+    cap = VideoCapture(0)
 
 
     stdscr.refresh()
@@ -318,7 +320,7 @@ def TerminalWrapped():
         if(time.time() - localTime >= 1):
 
             if (config.imageShow == True):
-                img = config.cap.read()
+                img = cap.read()
                 gray = gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
                 rescaledGray = cv2.resize(gray,dim)
 
@@ -327,7 +329,29 @@ def TerminalWrapped():
                 imgPlotter(imgPlotterBox, ascii)
 
             if (config.detection == True):
-                imgPlotterBox.addstr(1,20,DetectorOfFaces.detect())
+                detected,face = DetectorOfFaces.detect()
+                if detected:
+                    for (x,y,w,h) in face:
+                        x1 = x//4
+                        x2 = (x+w)//4
+                        y1 = y//10 + 3
+                        y2 = (y+h)//10 + 3
+
+                        imgPlotterBox.addstr(1,30,str(x1) + " " + str(x2) + " " + str(y1) + " " + str(y2))
+
+                        imgPlotterBox.box()
+                        imgPlotterBox.refresh()
+
+                        imgPlotterBox.addstr(y1,x1,"8")
+                        imgPlotterBox.addstr(y1,x2,"8")
+                        imgPlotterBox.addstr(y2,x1,"8")
+                        imgPlotterBox.addstr(y2,x2,"8")
+
+                imgPlotterBox.addstr(1,20,str(detected))
+
+
+                imgPlotterBox.box()
+                imgPlotterBox.refresh()
 
 
 
@@ -368,7 +392,7 @@ def TerminalWrapped():
                 activateImage(imgPlotterBox)
             elif (menu[menuPosition] == 'Face detection on/off'):
                 config.detection = True
-                DetectorOfFaces = faceDetection(config.cap)
+                DetectorOfFaces = faceDetection(cap)
 
 
             currentModePlotter(currentMode,localProgramMode)
