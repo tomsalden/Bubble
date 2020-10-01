@@ -342,10 +342,13 @@ def TerminalWrapped():
                         imgPlotterBox.box()
                         imgPlotterBox.refresh()
 
+                        imgPlotterBox.attron(curses.color_pair(1))
+
                         imgPlotterBox.addstr(y1,x1,"8")
                         imgPlotterBox.addstr(y1,x2,"8")
                         imgPlotterBox.addstr(y2,x1,"8")
                         imgPlotterBox.addstr(y2,x2,"8")
+                        imgPlotterBox.attroff(curses.color_pair(1))
 
                 imgPlotterBox.addstr(1,20,str(detected))
 
