@@ -44,8 +44,9 @@ class faceDetection:
         self.profile_cascade = cv2.CascadeClassifier('/home/pi/opencv-4.4.0/data/haarcascades/haarcascade_profileface.xml')
         self.eye_cascade = cv2.CascadeClassifier('/home/pi/opencv-4.4.0/data/haarcascades/haarcascade_eye.xml')
 
-        self.detected = 0
+        self.detected = 'No Face detected'
         self.faces = 0
+        self.interval = 1.5
 
         t = threading.Thread(target=self._detector)
         t.daemon = True
@@ -58,22 +59,25 @@ class faceDetection:
 
             self.faces = self.face_cascade.detectMultiScale(gray, 1.05, 5)
             if len(self.faces):
-                self.detected = True
+                self.detected = 'Face detected'
             else:
                 self.eyes = self.eye_cascade.detectMultiScale(gray, 1.05, 5)
                 if len(self.faces):
-                    self.detected = True
+                    self.detected = 'Eye detected'
                 else:
                     profiles = self.profile_cascade.detectMultiScale(gray, 1.05, 5)
                     if len(self.faces):
-                        self.detected = True
+                        self.detected = 'Face profile detected'
                     else:
-                        self.detected = False
+                        self.detected = 'No Face detected'
 
-            time.sleep(1)
+            time.sleep(self.interval)
 
     def detect(self):
         return self.detected, self.faces
+
+    def setInterval(self,interval):
+        self.interval = interval
 
 
 
@@ -238,6 +242,7 @@ def TerminalWrapped():
     curses.curs_set(0)
     curses.start_color()
     curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_WHITE)
+    curses.init_pair(2, curses.COLOR_WHITE, curses.COLOR_RED)
     screenHeight, screenWidth = stdscr.getmaxyx()
 
     #Picam settings:
@@ -247,7 +252,7 @@ def TerminalWrapped():
     height = 30
     dim = (width, height)
     scale = 0.43
-    cols = 40
+    cols = 20
     cap = VideoCapture(0)
 
 
@@ -330,25 +335,30 @@ def TerminalWrapped():
 
             if (config.detection == True):
                 detected,face = DetectorOfFaces.detect()
-                if detected:
+                if (detected == 'No Face detected'):
+                    detected = 'No Face detected'
+                else:
+                    w = width/cols
+                    h = w/scale
+                    rows = int(height/h)
                     for (x,y,w,h) in face:
-                        x1 = x//4
-                        x2 = (x+w)//4
-                        y1 = y//10 + 3
-                        y2 = (y+h)//10 + 3
+                        x1 = x//(160//cols)
+                        x2 = (x+w)//(160//cols)
+                        y1 = y//(120//rows) + 3
+                        y2 = (y+h)//(120//rows) + 3
 
-                        imgPlotterBox.addstr(1,30,str(x1) + " " + str(x2) + " " + str(y1) + " " + str(y2))
+                        #imgPlotterBox.addstr(1,30,str(x1) + " " + str(x2) + " " + str(y1) + " " + str(y2))
 
                         imgPlotterBox.box()
                         imgPlotterBox.refresh()
 
-                        imgPlotterBox.attron(curses.color_pair(1))
+                        imgPlotterBox.attron(curses.color_pair(2))
 
                         imgPlotterBox.addstr(y1,x1,"8")
                         imgPlotterBox.addstr(y1,x2,"8")
                         imgPlotterBox.addstr(y2,x1,"8")
                         imgPlotterBox.addstr(y2,x2,"8")
-                        imgPlotterBox.attroff(curses.color_pair(1))
+                        imgPlotterBox.attroff(curses.color_pair(2))
 
                 imgPlotterBox.addstr(1,20,str(detected))
 
