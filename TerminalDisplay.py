@@ -54,23 +54,31 @@ class faceDetection:
 
     def _detector(self):
         while True:
-            img = self.cameraObect.read()
-            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            if (config.newHead == False):
+                img = self.cameraObect.read()
+                gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-            self.faces = self.face_cascade.detectMultiScale(gray, 1.05, 5)
-            if len(self.faces):
-                self.detected = 'Face detected'
-            else:
-                self.eyes = self.eye_cascade.detectMultiScale(gray, 1.05, 5)
+                self.faces = self.face_cascade.detectMultiScale(gray, 1.05, 5)
                 if len(self.faces):
-                    self.detected = 'Eye detected'
+                    self.detected = 'Face detected'
                 else:
-                    profiles = self.profile_cascade.detectMultiScale(gray, 1.05, 5)
+                    self.eyes = self.eye_cascade.detectMultiScale(gray, 1.05, 5)
                     if len(self.faces):
-                        self.detected = 'Face profile detected'
+                        self.detected = 'Eye detected'
                     else:
-                        self.detected = 'No Face detected'
+                        profiles = self.profile_cascade.detectMultiScale(gray, 1.05, 5)
+                        if len(self.faces):
+                            self.detected = 'Face profile detected'
+                        else:
+                            self.detected = 'No Face detected'
 
+                if (self.detected != 'No Face detected'):
+                    config.newHead = True
+                    for (x,y,w,h) in self.faces:
+                        config.headCenter = [x+w//2, y+h//2]
+
+            else:
+                self.detected = 'No Face detected'
             time.sleep(self.interval)
 
     def detect(self):

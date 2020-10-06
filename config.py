@@ -44,3 +44,6 @@ imageShow = False
 cap = 0
 
 detection = False
+newHead = False
+headCenter = [80,60]
+DistanceSubject = 90 #Estimated 157, tuned to this value

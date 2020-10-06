@@ -24,13 +24,8 @@ import determineNewPosition
 import printFunctions
 import TerminalDisplay
 import _thread
+import math
 
-yawMin = 500
-yawMax = 2500
-pitchMin = 1300
-pitchMax = 1750
-rollMin = 1350
-rollMax = 1850
 programCounter = 1
 ready = 0
 
@@ -40,19 +35,19 @@ headPositions = [[0,1,1]]
 totalPositions = len(headPositions)
 
 # Up/down/middle - Pitch
-lookUp =        [config.middle,pitchMax]
+lookUp =        [config.middle,config.pitchMax]
 lookMiddle =    [config.middle-100,config.middle+100]
-lookDown =      [pitchMin, config.middle]
+lookDown =      [config.pitchMin, config.middle]
 
 # Left/right/center - Yaw
-lookLeft =      [config.middle,yawMax]
+lookLeft =      [config.middle,config.yawMax]
 lookCenter =    [config.middle-100,config.middle+100]
-lookRight =     [yawMin, config.middle]
+lookRight =     [config.yawMin, config.middle]
 
 # Tilt left/right/center - Roll
-lookTiltLeft =  [config.middle, rollMax]
+lookTiltLeft =  [config.middle, config.rollMax]
 lookStraight =[config.middle-100,config.middle+100]
-lookTiltRight = [rollMin, config.middle]
+lookTiltRight = [config.rollMin, config.middle]
 
 
 # Set the servos to their middle values
@@ -138,10 +133,28 @@ def BubbleMainLoop():
             config.pitchSteps = newPitchPosition - config.pitchPosition
             config.rollSteps = newRollPosition - config.rollPosition
 
+
+            if (config.newHead == True):
+                if config.headCenter[1] < 80:
+                    angleX = math.degrees(math.atan((80 - config.headCenter[0])/config.DistanceSubject))
+                else:
+                    angleX = -math.degrees(math.atan((config.headCenter[0] - 80)/config.DistanceSubject))
+                config.yawSteps = math.floor(angleX/(180/1000))
+
+                if config.headCenter[1] < 60:
+                    angleX = -math.degrees(math.atan((60 - config.headCenter[1])/config.DistanceSubject))
+                else:
+                    angleX = math.degrees(math.atan((config.headCenter[1] - 60)/config.DistanceSubject))
+                config.pitchSteps = math.floor(angleX/(180/1000))
+
+                config.rollSteps = 0
+                config.newHead = False
+                config.headCenter = [80,60]
+
             # Make sure the maximum potmeter values are not exceeded and set new position
-            config.yawSteps = omitMaxValue.MaxValue(config.yawPosition,config.yawSteps,yawMin,yawMax)
-            config.pitchSteps = omitMaxValue.MaxValue(config.pitchPosition,config.pitchSteps,pitchMin,pitchMax)
-            config.rollSteps = omitMaxValue.MaxValue(config.rollPosition,config.rollSteps,rollMin,rollMax)
+            config.yawSteps = omitMaxValue.MaxValue(config.yawPosition,config.yawSteps,config.yawMin,config.yawMax)
+            config.pitchSteps = omitMaxValue.MaxValue(config.pitchPosition,config.pitchSteps,config.pitchMin,config.pitchMax)
+            config.rollSteps = omitMaxValue.MaxValue(config.rollPosition,config.rollSteps,config.rollMin,config.rollMax)
 
             # Move the servos to the right place in the right time
             ready = 0
@@ -166,32 +179,32 @@ def BubbleMainLoop():
             config.totalSteps = 30
 
             if (config.keyPressed == 'A'): #Turn left
-                config.yawSteps = omitMaxValue.MaxValue(config.yawPosition,-1*steps,yawMin,yawMax)
+                config.yawSteps = omitMaxValue.MaxValue(config.yawPosition,-1*steps,config.yawMin,config.yawMax)
                 moveServos.moveTotalSteps()
                 headPositionDeterminer()
 
             elif (config.keyPressed == 'D'): #Turn right
-                config.yawSteps = omitMaxValue.MaxValue(config.yawPosition,steps,yawMin,yawMax)
+                config.yawSteps = omitMaxValue.MaxValue(config.yawPosition,steps,config.yawMin,config.yawMax)
                 moveServos.moveTotalSteps()
                 headPositionDeterminer()
 
             elif (config.keyPressed == 'S'): #Turn down
-                config.pitchSteps = omitMaxValue.MaxValue(config.pitchPosition,-1*steps,pitchMin,pitchMax)
+                config.pitchSteps = omitMaxValue.MaxValue(config.pitchPosition,-1*steps,config.pitchMin,config.pitchMax)
                 moveServos.moveTotalSteps()
                 headPositionDeterminer()
 
             elif (config.keyPressed == 'W'): #Turn up
-                config.pitchSteps = omitMaxValue.MaxValue(config.pitchPosition,steps,pitchMin,pitchMax)
+                config.pitchSteps = omitMaxValue.MaxValue(config.pitchPosition,steps,config.pitchMin,config.pitchMax)
                 moveServos.moveTotalSteps()
                 headPositionDeterminer()
 
             elif (config.keyPressed == 'Q'): #Rotate left
-                config.rollSteps = omitMaxValue.MaxValue(config.rollPosition,-1*steps,rollMin,rollMax)
+                config.rollSteps = omitMaxValue.MaxValue(config.rollPosition,-1*steps,config.rollMin,config.rollMax)
                 moveServos.moveTotalSteps()
                 headPositionDeterminer()
 
             elif (config.keyPressed == 'E'): #Rotate right
-                config.rollSteps = omitMaxValue.MaxValue(config.rollPosition,steps,rollMin,rollMax)
+                config.rollSteps = omitMaxValue.MaxValue(config.rollPosition,steps,config.rollMin,config.rollMax)
                 moveServos.moveTotalSteps()
                 headPositionDeterminer()
 
@@ -206,6 +219,8 @@ def BubbleMainLoop():
                 config.pi.set_servo_pulsewidth(config.yawServo, 0)
                 config.pi.set_servo_pulsewidth(config.pitchServo, 0)
                 config.pi.set_servo_pulsewidth(config.rollServo, 0)
+
+
 
 def main():
     try:
