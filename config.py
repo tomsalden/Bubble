@@ -12,18 +12,12 @@ currentHeadPosition = [1,1,1]
 programRunning = True
 programMode = 'Random'
 keyPressed = 'none'
+breakSleep = False
 
 currentEmotion = 'Normal'
 nextEmotion = 'Normal'
 Emotions = ['Normal','Other']
 timetoNextEmotion = 10
-
-# Initial values for the variables
-middle = 1500
-
-yawPosition = middle
-pitchPosition = middle
-rollPosition = middle
 
 totalSteps = 20
 yawSteps = 100
@@ -33,11 +27,21 @@ rollSteps = 100
 sleepTime = 0.04
 
 yawMin = 500
+yawMiddle = 1600
 yawMax = 2500
 pitchMin = 1300
+pitchMiddle = 1500
 pitchMax = 1750
 rollMin = 1350
+rollMiddle = 1600
 rollMax = 1850
+
+# Initial values for the variables
+middle = 1500
+
+yawPosition = yawMiddle
+pitchPosition = pitchMiddle
+rollPosition = rollMiddle
 
 cameraEnabled = False
 imageShow = False

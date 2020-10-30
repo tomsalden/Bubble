@@ -37,6 +37,7 @@ class VideoCapture:
   def read(self):
     return self.q.get()
 
+#Create a daemon for face recognition. This way a face can be detected in the background
 class faceDetection:
     def __init__(self, cameraObject):
         self.cameraObect = cameraObject
@@ -46,7 +47,7 @@ class faceDetection:
 
         self.detected = 'No Face detected'
         self.faces = 0
-        self.interval = 1.5
+        self.interval = 1 #Set the detection interval. Higher means a face more often
 
         t = threading.Thread(target=self._detector)
         t.daemon = True
@@ -54,7 +55,7 @@ class faceDetection:
 
     def _detector(self):
         while True:
-            if (config.newHead == False):
+            if (config.newHead == False and config.detection == True): #Only try to find a new head if the old head has been processed already
                 img = self.cameraObect.read()
                 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
@@ -62,24 +63,26 @@ class faceDetection:
                 if len(self.faces):
                     self.detected = 'Face detected'
                 else:
-                    self.eyes = self.eye_cascade.detectMultiScale(gray, 1.05, 5)
-                    if len(self.faces):
-                        self.detected = 'Eye detected'
-                    else:
-                        profiles = self.profile_cascade.detectMultiScale(gray, 1.05, 5)
-                        if len(self.faces):
-                            self.detected = 'Face profile detected'
-                        else:
-                            self.detected = 'No Face detected'
+                    self.detected = 'No Face detected'
+                    # self.eyes = self.eye_cascade.detectMultiScale(gray, 1.05, 5)
+                    # if len(self.faces):
+                    #     self.detected = 'Eye detected'
+                    # else:
+                    #     profiles = self.profile_cascade.detectMultiScale(gray, 1.05, 5)
+                    #     if len(self.faces):
+                    #         self.detected = 'Face profile detected'
+                    #     else:
+                    #         self.detected = 'No Face detected'
 
                 if (self.detected != 'No Face detected'):
                     config.newHead = True
                     for (x,y,w,h) in self.faces:
                         config.headCenter = [x+w//2, y+h//2]
+                    config.breakSleep = True
 
-            else:
-                self.detected = 'No Face detected'
-            time.sleep(self.interval)
+                time.sleep(self.interval)
+
+            time.sleep(0.1)
 
     def detect(self):
         return self.detected, self.faces
@@ -87,6 +90,8 @@ class faceDetection:
     def setInterval(self,interval):
         self.interval = interval
 
+
+################ Visual terminal ################
 
 
 # Create the terminal boxes
@@ -228,19 +233,20 @@ def imgPlotter(imgbox,ascii):
 
 def activateImage(imgPlotterBox):
     if (config.cameraEnabled == False):
-
         config.cameraEnabled = True
     config.imageShow = not config.imageShow
     imgPlotterBox.addstr(1,1,"\n")
     imgPlotterBox.clrtobot()
-    imgPlotterBox.addstr(6,42//2-1,"No\n")
-    imgPlotterBox.addstr(7,42//2-3,"Image\n")
-    imgPlotterBox.addstr(9,42//2-23//2,"Activate camera in menu")
+    imgPlotterBox.addstr(6,25//2-1,"No\n")
+    imgPlotterBox.addstr(7,25//2-3,"Image\n")
+    imgPlotterBox.addstr(9,25//2-23//2,"Activate camera in menu")
     imgPlotterBox.box()
     imgPlotterBox.refresh()
 
+# Main program
+
 def TerminalWrapped():
-    localProgramMode = 'Random'
+    #Curses initialisation parameters
     stdscr = curses.initscr()
     curses.noecho()
     curses.cbreak()
@@ -251,7 +257,10 @@ def TerminalWrapped():
     curses.start_color()
     curses.init_pair(1, curses.COLOR_BLACK, curses.COLOR_WHITE)
     curses.init_pair(2, curses.COLOR_WHITE, curses.COLOR_RED)
+
+    #Other parameters
     screenHeight, screenWidth = stdscr.getmaxyx()
+    localProgramMode = 'Random'
 
     #Picam settings:
     cameraEnabled = False
@@ -263,10 +272,7 @@ def TerminalWrapped():
     cols = 20
     cap = VideoCapture(0)
 
-
     stdscr.refresh()
-
-
 
     #Title Box
     titleBox = curses.newwin(10, screenWidth-1, 1, 1)
@@ -298,10 +304,10 @@ def TerminalWrapped():
     menuPrinter(menuBox,menu,'MenuTitle',menuPosition)
 
     #Image Plotter
-    imgPlotterBox = curses.newwin(16,42,11,38)
-    imgPlotterBox.addstr(6,42//2-1,"No\n")
-    imgPlotterBox.addstr(7,42//2-3,"Image\n")
-    imgPlotterBox.addstr(9,42//2-23//2,"Activate camera in menu")
+    imgPlotterBox = curses.newwin(16,25,11,38)
+    imgPlotterBox.addstr(6,25//2-1,"No\n")
+    imgPlotterBox.addstr(7,25//2-3,"Image\n")
+    imgPlotterBox.addstr(9,25//2-23//2,"Activate camera in menu")
     imgPlotterBox.box()
     imgPlotterBox.refresh()
 
@@ -368,9 +374,7 @@ def TerminalWrapped():
                         imgPlotterBox.addstr(y2,x2,"8")
                         imgPlotterBox.attroff(curses.color_pair(2))
 
-                imgPlotterBox.addstr(1,20,str(detected))
-
-
+                imgPlotterBox.addstr(2,1,str(detected))
                 imgPlotterBox.box()
                 imgPlotterBox.refresh()
 
@@ -382,6 +386,7 @@ def TerminalWrapped():
                     config.timetoNextEmotion = random.randint(10,30)
                     config.currentEmotion = config.nextEmotion
                     config.nextEmotion = random.choice(config.Emotions)
+                    config.breakSleep = True
                 currentEmotionPlotter(currentEmotion,config.currentEmotion, config.nextEmotion, config.timetoNextEmotion)
             localTime = time.time()
 
@@ -406,13 +411,15 @@ def TerminalWrapped():
             elif (menu[menuPosition] == 'Keyboard Mode'):
                 config.programMode = 'Keyboard'
                 localProgramMode = 'Keyboard'
+                config.breakSleep = True
             elif (menu[menuPosition] == 'Random Mode'):
                 config.programMode = 'Random'
                 localProgramMode = 'Random'
+                config.breakSleep = True
             elif (menu[menuPosition] == 'Camera on/off'):
                 activateImage(imgPlotterBox)
             elif (menu[menuPosition] == 'Face detection on/off'):
-                config.detection = True
+                config.detection = not config.detection
                 DetectorOfFaces = faceDetection(cap)
 
 

@@ -51,9 +51,9 @@ lookTiltRight = [config.rollMin, config.middle]
 
 
 # Set the servos to their middle values
-config.pi.set_servo_pulsewidth(config.yawServo, config.middle)
-config.pi.set_servo_pulsewidth(config.pitchServo, config.middle)
-config.pi.set_servo_pulsewidth(config.rollServo, config.middle)
+config.pi.set_servo_pulsewidth(config.yawServo, config.yawMiddle)
+config.pi.set_servo_pulsewidth(config.pitchServo, config.pitchMiddle)
+config.pi.set_servo_pulsewidth(config.rollServo, config.rollMiddle)
 
 
 def headPositionDeterminer():
@@ -85,6 +85,9 @@ def BubbleMainLoop():
     global programCounter
     global headPositions
     global ready
+
+    movingToHead = False
+
     while(config.programRunning):
         # # Get the random integers for rotating the head
         # config.totalSteps = random.randint(20,51)
@@ -135,7 +138,8 @@ def BubbleMainLoop():
 
 
             if (config.newHead == True):
-                if config.headCenter[1] < 80:
+                movingToHead = True
+                if config.headCenter[0] < 80:
                     angleX = math.degrees(math.atan((80 - config.headCenter[0])/config.DistanceSubject))
                 else:
                     angleX = -math.degrees(math.atan((config.headCenter[0] - 80)/config.DistanceSubject))
@@ -145,11 +149,14 @@ def BubbleMainLoop():
                     angleX = -math.degrees(math.atan((60 - config.headCenter[1])/config.DistanceSubject))
                 else:
                     angleX = math.degrees(math.atan((config.headCenter[1] - 60)/config.DistanceSubject))
-                config.pitchSteps = math.floor(angleX/(180/1000))
+                config.pitchSteps = -math.floor(angleX/(180/1000))
 
-                config.rollSteps = 0
-                config.newHead = False
+                config.rollSteps = config.rollMiddle - config.rollPosition
+
+                #config.rollSteps = 10
                 config.headCenter = [80,60]
+                config.newHead = False
+                timeBetweenMoves = random.randint(50,100)
 
             # Make sure the maximum potmeter values are not exceeded and set new position
             config.yawSteps = omitMaxValue.MaxValue(config.yawPosition,config.yawSteps,config.yawMin,config.yawMax)
@@ -162,13 +169,16 @@ def BubbleMainLoop():
             ready = 1
 
             programCounter = programCounter + 1
-            localProgramMode = config.programMode
-            localEmotion = config.currentEmotion
             sleepCounter = 0
+            config.breakSleep = False
 
-            while(sleepCounter < timeBetweenMoves and localProgramMode == config.programMode and localEmotion == config.currentEmotion):
+            while(sleepCounter < timeBetweenMoves and config.breakSleep == False):
                 time.sleep(0.1)
                 sleepCounter = sleepCounter + 1
+
+            if (movingToHead == True):
+                #config.newHead = False
+                movingToHead = False
 
         elif (config.programMode == 'Keyboard'): #Keyboard Interaction with the robot
             steps = 200
@@ -209,9 +219,9 @@ def BubbleMainLoop():
                 headPositionDeterminer()
 
             elif (config.keyPressed == 'C'): #Center button
-                config.yawSteps = config.middle - config.yawPosition
-                config.pitchSteps = config.middle - config.pitchPosition
-                config.rollSteps = config.middle - config.rollPosition
+                config.yawSteps = config.yawMiddle - config.yawPosition
+                config.pitchSteps = config.pitchMiddle - config.pitchPosition
+                config.rollSteps = config.rollMiddle - config.rollPosition
                 moveServos.moveTotalSteps()
                 headPositionDeterminer()
 
@@ -241,15 +251,15 @@ def main():
 
     config.sleepTime = 0.04
     config.totalSteps = 10
-    config.yawSteps = config.middle - config.yawPosition
-    config.pitchSteps = config.middle - config.pitchPosition
-    config.rollSteps = config.middle - config.rollPosition
+    config.yawSteps = config.yawMiddle - config.yawPosition
+    config.pitchSteps = config.pitchMiddle - config.pitchPosition
+    config.rollSteps = config.rollMiddle - config.rollPosition
 
     moveServos.moveTotalSteps()
 
-    config.pi.set_servo_pulsewidth(config.yawServo, config.middle)
-    config.pi.set_servo_pulsewidth(config.pitchServo, config.middle)
-    config.pi.set_servo_pulsewidth(config.rollServo, config.middle)
+    config.pi.set_servo_pulsewidth(config.yawServo, config.yawMiddle)
+    config.pi.set_servo_pulsewidth(config.pitchServo, config.pitchMiddle)
+    config.pi.set_servo_pulsewidth(config.rollServo, config.rollMiddle)
 
     print("Disabling Servos")
 
