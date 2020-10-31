@@ -50,4 +50,9 @@ cap = 0
 detection = False
 newHead = False
 headCenter = [80,60]
+
+ColourDetection = False
+newColor = False
+
 DistanceSubject = 90 #Estimated 157, tuned to this value
+DistanceSubjectColor = 400 #Estimated 157, tuned to this value

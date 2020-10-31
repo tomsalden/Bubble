@@ -98,6 +98,7 @@ def BubbleMainLoop():
         if (config.programMode == 'Random'): # Default state of the robot, randomly moving its head
             # Set the new position of the servos according to the general position of the head and the speed at which this needs to happen
             # Include 'emotions' in the calculation
+            config.breakSleep = False
 
             if (config.currentEmotion == 'Alert'):
                 config.sleepTime = 0.04
@@ -158,6 +159,28 @@ def BubbleMainLoop():
                 config.newHead = False
                 timeBetweenMoves = random.randint(50,100)
 
+            if (config.newColor == True):
+                if config.headCenter[0] < 80:
+                    angleX = math.degrees(math.atan((80 - config.headCenter[0])/config.DistanceSubjectColor))
+                else:
+                    angleX = -math.degrees(math.atan((config.headCenter[0] - 80)/config.DistanceSubjectColor))
+                config.yawSteps = math.floor(angleX/(180/1000))
+
+                if config.headCenter[1] < 60:
+                    angleX = -math.degrees(math.atan((60 - config.headCenter[1])/config.DistanceSubjectColor))
+                else:
+                    angleX = math.degrees(math.atan((config.headCenter[1] - 60)/config.DistanceSubjectColor))
+                config.pitchSteps = -math.floor(angleX/(180/1000))
+
+                config.rollSteps = config.rollMiddle - config.rollPosition
+
+                #config.rollSteps = 10
+                config.headCenter = [80,60]
+                config.newColor = False
+                timeBetweenMoves = random.randint(50,100)
+                config.totalSteps = 3
+
+
             # Make sure the maximum potmeter values are not exceeded and set new position
             config.yawSteps = omitMaxValue.MaxValue(config.yawPosition,config.yawSteps,config.yawMin,config.yawMax)
             config.pitchSteps = omitMaxValue.MaxValue(config.pitchPosition,config.pitchSteps,config.pitchMin,config.pitchMax)
@@ -170,7 +193,8 @@ def BubbleMainLoop():
 
             programCounter = programCounter + 1
             sleepCounter = 0
-            config.breakSleep = False
+
+
 
             while(sleepCounter < timeBetweenMoves and config.breakSleep == False):
                 time.sleep(0.1)

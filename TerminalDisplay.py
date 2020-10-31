@@ -3,6 +3,7 @@ import time
 import config
 import random
 import img2ascii
+import imutils
 
 import sys
 import numpy as np
@@ -24,6 +25,7 @@ class VideoCapture:
   # read frames as soon as they are available, keeping only most recent one
   def _reader(self):
     while True:
+      time.sleep(0.1)
       ret, frame = self.cap.read()
       if not ret:
         break
@@ -41,6 +43,7 @@ class VideoCapture:
 class faceDetection:
     def __init__(self, cameraObject):
         self.cameraObect = cameraObject
+        #Parameters Face detection
         self.face_cascade = cv2.CascadeClassifier('/home/pi/opencv-4.4.0/data/haarcascades/haarcascade_frontalface_alt.xml')
         self.profile_cascade = cv2.CascadeClassifier('/home/pi/opencv-4.4.0/data/haarcascades/haarcascade_profileface.xml')
         self.eye_cascade = cv2.CascadeClassifier('/home/pi/opencv-4.4.0/data/haarcascades/haarcascade_eye.xml')
@@ -48,6 +51,10 @@ class faceDetection:
         self.detected = 'No Face detected'
         self.faces = 0
         self.interval = 1 #Set the detection interval. Higher means a face more often
+
+        #Parameters Colour Detection
+        self.thresholdLower = (165, 166, 38)
+        self.thresholdUpper = (183, 235, 103)
 
         t = threading.Thread(target=self._detector)
         t.daemon = True
@@ -64,15 +71,6 @@ class faceDetection:
                     self.detected = 'Face detected'
                 else:
                     self.detected = 'No Face detected'
-                    # self.eyes = self.eye_cascade.detectMultiScale(gray, 1.05, 5)
-                    # if len(self.faces):
-                    #     self.detected = 'Eye detected'
-                    # else:
-                    #     profiles = self.profile_cascade.detectMultiScale(gray, 1.05, 5)
-                    #     if len(self.faces):
-                    #         self.detected = 'Face profile detected'
-                    #     else:
-                    #         self.detected = 'No Face detected'
 
                 if (self.detected != 'No Face detected'):
                     config.newHead = True
@@ -81,6 +79,24 @@ class faceDetection:
                     config.breakSleep = True
 
                 time.sleep(self.interval)
+
+            if (config.newColor == False and config.ColourDetection == True): #Engage color faceDetection
+                img = self.cameraObect.read()
+                blurred = cv2.GaussianBlur(img, (11, 11), 0)
+                hsv = cv2.cvtColor(blurred, cv2.COLOR_BGR2HSV)
+                mask = cv2.inRange(hsv, self.thresholdLower, self.thresholdUpper)
+                mask = cv2.erode(mask, None, iterations=2)
+                mask = cv2.dilate(mask, None, iterations=2)
+                cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+                cnts = imutils.grab_contours(cnts)
+                center = [80,60]
+                if len(cnts) > 0:
+                    c = max(cnts, key=cv2.contourArea)
+                    ((x, y), radius) = cv2.minEnclosingCircle(c)
+                    M = cv2.moments(c)
+                    config.headCenter = [int(M["m10"] / M["m00"]), int(M["m01"] / M["m00"])]
+                    config.newColor = True
+                    config.breakSleep = True
 
             time.sleep(0.1)
 
@@ -210,7 +226,7 @@ def menuPrinter(menuWindow,menuItems,menuHeader,selectedRow):
 
     for idx, row in enumerate(menuItems):
         x = w//2 - len(row)//2
-        y = h//2 - len(menuItems)//2 + idx
+        y = 3 + idx
         if idx == selectedRow:
             menuWindow.attron(curses.color_pair(1))
             menuWindow.addstr(y,x,row)
@@ -297,8 +313,8 @@ def TerminalWrapped():
     currentEmotionPlotter(currentEmotion,config.currentEmotion, config.nextEmotion, config.timetoNextEmotion)
 
     #Menu Box
-    menuBox = curses.newwin(10,screenWidth-1,screenHeight-10,1)
-    menu = ['Random Mode', 'Keyboard Mode', 'Camera on/off', 'Face detection on/off', 'Exit']
+    menuBox = curses.newwin(11,screenWidth-1,screenHeight-10,1)
+    menu = ['Random Mode', 'Keyboard Mode', 'Camera on/off', 'Face detection on/off', 'Colour Follower', 'Exit']
     menuBox.box()
     menuPosition = 0
     menuPrinter(menuBox,menu,'MenuTitle',menuPosition)
@@ -421,6 +437,8 @@ def TerminalWrapped():
             elif (menu[menuPosition] == 'Face detection on/off'):
                 config.detection = not config.detection
                 DetectorOfFaces = faceDetection(cap)
+            elif (menu[menuPosition] == 'Colour Follower'):
+                config.ColourDetection = not config.ColourDetection
 
 
             currentModePlotter(currentMode,localProgramMode)
